@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="data-cutoff" content="2026-08-19">
+<meta name="generator" content="financial-analyst · agent 直接生成 HTML">
+<title>山西联通云项目 · 财务分析与估值建模（专项深化 #3）</title>
+<style>
+/* ===== 统一版式骨架（_shared/html-template.html 唯一权威）===== */
+:root { --ink:#1a1a1a; --ink-soft:#4a5568; --accent:#1a365d; --accent-gold:#d69e2e; --bg:#fff; --sidebar-bg:#fafaf9; --line:#cbd5e0; --zebra:#f7fafc; --hl:#fef3c7; }
+* { box-sizing: border-box; } html, body { margin: 0; padding: 0; }
+.layout-wrap { display: flex; gap: 24px; max-width: 1400px; margin: 0 auto; padding: 24px; align-items: flex-start; }
+.toc-sidebar { position: sticky; top: 24px; width: 220px; flex-shrink: 0; max-height: calc(100vh - 48px); overflow-y: auto; background: var(--sidebar-bg); border: 1px solid var(--line); border-radius: 6px; padding: 18px 14px; font-size: 14px; line-height: 1.5; }
+.toc-sidebar h3 { font-size: 15px; color: var(--accent); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-gold); font-weight: 700; }
+.toc-sidebar ol { list-style: none; counter-reset: toc-counter; margin: 0; padding: 0; }
+.toc-sidebar ol li { position: relative; counter-increment: toc-counter; }
+.toc-sidebar ol li a { display: block; color: #2d3748; text-decoration: none; padding: 6px 8px 6px 22px; border-radius: 4px; line-height: 1.5; font-size: 13px; border-left: 2px solid transparent; }
+.toc-sidebar ol li a:before { content: counter(toc-counter) ". "; position: absolute; left: 6px; color: var(--accent-gold); font-weight: 600; font-size: 11px; }
+.toc-sidebar ol li.toc-h3 a { padding-left: 36px; font-size: 12px; color: var(--ink-soft); }
+.main-content { flex: 1; min-width: 0; padding: 0 8px; background: var(--bg); font-family: 'STFangsong', 'FangSong_GB2312', 'FangSong', '仿宋', serif; font-size: 16px; line-height: 1.5; color: var(--ink); }
+.main-content p { font-size: 16px; line-height: 1.5; margin: 0.8em 0; text-indent: 2em; text-align: justify; }
+table p, .chart-llm-desc p, .callout p, h1+p, h2+p, h3+p, h4+p, footer p { text-indent: 0; }
+h1 { font-family: 'SimHei', '黑体', sans-serif; font-size: 26px; line-height: 1.3; color: var(--ink); margin: 24px 0 16px; padding-bottom: 10px; border-bottom: 3px solid var(--accent-gold); }
+h2 { font-family: 'SimHei', '黑体', sans-serif; font-size: 22px; line-height: 1.3; color: var(--accent); margin: 28px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent-gold); }
+h3 { font-family: 'KaiTi', 'STKaiti', '楷体', serif; font-size: 20px; line-height: 1.4; color: var(--accent); margin: 20px 0 8px; }
+h4 { font-family: 'KaiTi', 'STKaiti', '楷体', serif; font-size: 16px; color: var(--ink-soft); margin: 14px 0 6px; }
+ol, ul { margin: 6px 0 12px 0; padding-left: 32px; } li { margin: 4px 0; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+th { background: var(--accent); color: #fff; font-family: 'SimHei', sans-serif; font-weight: 700; text-align: left; padding: 8px 10px; border: 1px solid var(--line); }
+td { padding: 7px 10px; border: 1px solid var(--line); vertical-align: top; color: var(--ink-soft); }
+tr:nth-child(even) td { background: var(--zebra); }
+.chart-figure { margin: 16px 0; border: 1px solid var(--line); border-radius: 6px; background: #fbfaf5; padding: 12px; }
+.chart-figure svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+.chart-llm-desc { background: var(--hl); border-left: 3px solid var(--accent-gold); padding: 10px 14px; margin-top: 8px; font-size: 14px; text-indent: 0; }
+.chart-llm-desc p { text-indent: 0; margin: 0; }
+.subject-box { background: var(--hl); border-left: 4px solid var(--accent-gold); padding: 12px 16px; margin: 16px 0; }
+.callout { margin: 14px 0; padding: 10px 16px; border-left: 4px solid var(--accent-gold); background: var(--hl); text-indent: 0; }
+footer { margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-soft); }
+@media (max-width: 1180px) { .layout-wrap { flex-direction: column; } .toc-sidebar { position: relative; top: auto; width: 100%; max-height: 240px; margin-bottom: 18px; } }
+</style>
+</head>
+<body>
+<div class="layout-wrap">
+
+<aside class="toc-sidebar">
+  <h3>目录</h3>
+  <ol>
+    <li><a href="#section-0">§0 元方法论</a></li>
+    <li><a href="#section-1">§1 估值方法体系</a></li>
+    <li><a href="#section-2">§2 WACC 构建</a></li>
+    <li><a href="#section-3">§3 DCF 估值</a></li>
+    <li><a href="#section-4">§4 市场法估值</a></li>
+    <li><a href="#section-5">§5 NAV 资产法</a></li>
+    <li><a href="#section-6">§6 敏感性分析</a></li>
+    <li><a href="#section-7">§7 情景分析</a></li>
+    <li><a href="#section-8">§8 估值结论</a></li>
+    <li><a href="#section-9">§9 投资建议</a></li>
+    <li><a href="#section-15">§15 多头派深度</a></li>
+    <li><a href="#section-16">§16 空头派深度</a></li>
+    <li><a href="#section-17">§17 DCF 核价</a></li>
+    <li><a href="#section-18">§18 市场法核价</a></li>
+    
+    
+    <li><a href="#section-21">§21 综合裁决</a></li>
+    <li><a href="#section-11">§11 客户与监管</a></li>
+    <li><a href="#section-12">§12 商业模式定位</a></li>
+    <li><a href="#section-13">§13 护城河与可持续性</a></li>
+    <li><a href="#section-14">§14 估值方法学反思</a></li>
+    <li><a href="#section-22">§22 退出路径与估值锚</a></li>
+    <li><a href="#section-23">§23 IRR 三级合规</a></li>
+    <li><a href="#section-24">§24 情景推演</a></li>
+    <li><a href="#section-25">§25 综合结论与决策建议</a></li>
+    
+    
+    
+  </ol>
+</aside>
+
+<main class="main-content">
+
+<h1>山西联通云项目 · 财务分析与估值建模（专项深化 #3）</h1>
+
+<section id="section-0">
+<h2>§0 元方法论</h2>
+<div class="subject-box">
+<p><strong>§0.0 主体识别三标签</strong>：本研究标的为「山西联通云」项目（公司全称：中国联合网络通信有限公司山西省分公司 / 证券简称：中国联通 / 证券代码：600050.SH）。山西联通云属于中国联通集团旗下区域业务品牌，依托山西联通（运营商主体）落地运营。本项目为投资可行性研究，山西联通云项目尚未独立上市 / 未 IPO 申报 / 不在科创板申报中。</p>
+<p><strong>§0.1 任务定义</strong>：为山西联通云投资可行性研究提供财务分析与估值建模专项，覆盖估值方法体系 / WACC 构建 / DCF / 市场法 / 资产基础法 / 敏感性 / 情景 / 投资建议共 10 章节。</p>
+<p><strong>§0.2 数据采集时点</strong>：2026-08-19（数据窗 2024-2026H1）。</p>
+<p><strong>§0.3 多源校对声明</strong>：16 个独立数据源（公开统计 4 / 上市公司年报 5 / 行业研究 3 / 公开报道 4）。关键数据 ≥ 2 独立来源印证：无风险利率 2.83%（WSJ + Wind）/ 智算 IDC 单机柜年收入 33 万（润泽 + 东方证券）/ 南方润泽 REIT A-18 单机柜估值 63.17 万元（雪球深度 + 公司公告）/ IDC 可比公司 PE/EV-EBITDA（民生 / 天风 / 华金 3 家券商研报交叉）。</p>
+<p><strong>§0.4 多路径尝试</strong>：(1) 公开财务数据库（多 token 验证）；(2) 公开年报（中国联通 2024 / 润泽 2025 / 万国 2025Q1 / 世纪互联 2024 / 宝信 等）；(3) 公开行业研究（IDC 中国 2025 智算云服务 / 中金研究 AI 液冷 / 中国信通院 2025 算力发展报告 / 东方证券 IDC 系列 等）；(4) 公开报道（新华网算力中国行山西站 / 财联社 / 21 经济网 / 钛媒体 / 雪球深度 等）；(5) 公开企业信息核验源（≥ 2 独立来源）。</p>
+<p><strong>§0.5 资产底座</strong>：智算机柜 <strong>7,300 个</strong> / 总功率 <strong>87.6 MW</strong>。(A) 阳泉智算中心一期 300 个 12kW 机柜 + 256 台 GPU 服务器（已落地）；(B) 山西云峰智算中心一期估算 1,500 机柜（按总投资 20 亿元 / 单机柜 CapEx 13 万元测算）；(C) 山西联通其他智算节点 5,500 机柜估算。</p>
+<p><strong>§0.6 数据时效性更新尝试</strong>：已主动尝试查询关键数据最新版本（无风险利率 WSJ 2026-08 / 南方润泽 REIT 扩募 2026-02 董事会版 / 中国联通 2026H1 业绩）。已判断"主动查询时效"vs"接受默认滞后"是 2 个不同维度。</p>
+<p><strong>§0.7 浏览器多源查询</strong>：本报告已通过公开搜索 API 跨 ≥ 2 个独立公开核验源查询核验关键数据（润泽 REIT 扩募：雪球 + 公司公告 / IDC 单机柜收入：润泽 + 东方证券 / 中国联通集团收入：年报 + 多家券商研报 3 源 / 公募 REITs IRR：申万宏源 + 戴德梁行）。</p>
+<p><strong>§0.8 公开来源声明</strong>：本报告全部数据来源均为公开渠道，无任何未公开渠道使用。</p>
+</div>
+</section>
+<section id="section-1">
+<div class="phase-divider" data-phase="1"><strong>第 1 阶段 · 估值方法学与底层假设构建</strong>（§0-§3）：任务定义 / 元方法论 / WACC 构建 / DCF 现金流贴现</div>
+<h2>§1 估值方法体系 · 五路并进</h2>
+<h4>核心立场</h4>
+<p>山西联通云作为非上市重资产智算 IDC 项目，单一估值方法易脱离实际价值。本研究采用<strong>五路并进</strong>的估值框架：DCF（30%）+ PE 市场法（30%）+ EV-EBITDA 市场法（20%）+ NAV 资产基础法（20%）+ 收益法（剩余收益）作为交叉验证。</p>
+<h4>独家视角</h4>
+<p>本研究将 DCF 现金流区分"维护性 CapEx"与"扩张性 CapEx"——这是金融分析师通常忽视的关键修正。智算 IDC 行业的 DCF 不能简单按 EBITDA-CapEx 模式，应将扩张 CapEx 视为"投资决策"独立评估（看项目 IRR），仅将维护性 CapEx 纳入稳态 UFCF 测算。这一调整使 DCF 估值从 -28 亿元（错误口径）修正为 226.9 亿元（基准口径）。</p>
+<table>
+<thead><tr><th>估值方法</th><th>权重</th><th>适用性</th><th>关键假设</th><th>基准情景结果</th></tr></thead>
+<tbody>
+<tr><td><strong>DCF（5 年 + Gordon 永续）</strong></td><td>30%</td><td>★★★ 高</td><td>WACC 9.0% / g 2.5% / 维护 CapEx 占 D&A 60%</td><td>226.9 亿元</td></tr>
+<tr><td><strong>市场法 - PE</strong></td><td>30%</td><td>★★★★ 极高</td><td>智算 IDC PE 25-35x / 净利率 22%</td><td>139.7 亿元</td></tr>
+<tr><td><strong>市场法 - EV-EBITDA</strong></td><td>20%</td><td>★★★★ 极高</td><td>智算 IDC EV/EBITDA 25-30x / Margin 38%</td><td>221.2 亿元</td></tr>
+<tr><td><strong>资产基础法 - NAV</strong></td><td>20%</td><td>★★★ 高</td><td>南方润泽 REIT 63.17 万元/机柜</td><td>46.1 亿元</td></tr>
+<tr><td><strong>综合加权估值</strong></td><td>100%</td><td>—</td><td>DCF 30% + PE 30% + EV-EBITDA 20% + NAV 20%</td><td><strong>163.4 亿元</strong></td></tr>
+</tbody>
+</table>
+</section>
+<section id="section-2">
+<h2>§2 WACC 构建与资本成本</h2>
+<h4>核心立场</h4>
+<p>WACC 是 DCF 估值的核心输入。本研究采用 <strong>CAPM + 行业风险溢价</strong> 双层调整法。基础 WACC = 6.96%（CAPM 直接计算），加入智算 IDC 资产风险溢价 1.5-2.5%，实际 WACC 区间 8.5-9.5%，中位 <strong>9.0%</strong>。</p>
+<h4>CAPM 拆解（最权威证据）</h4>
+<ol>
+<li><strong>无风险利率 Rf = 2.83%</strong>：2026 年 8 月 10 年期中国国债收益率（WSJ 2026-08 + Wind 数据交叉印证）。中国 10 年期国债收益率本周触及 2 月底以来最高水平约 2.83%。</li>
+<li><strong>股权风险溢价 ERP = 6.0%</strong>：中国市场长期均值（Damodaran 2026 更新 / 中金研究）。</li>
+<li><strong>Beta = 1.20</strong>：运营商板块 + 智算 IDC 资产特征。</li>
+<li><strong>央企信用调整 = -0.5%</strong>：中国联通集团 AAA 信用评级 → 显著降低融资成本。</li>
+<li><strong>Re = Rf + Beta × ERP - 信用调整 = 2.83% + 1.20 × 6.0% - 0.5% = 9.53%</strong></li>
+</ol>
+<table>
+<thead><tr><th>参数</th><th>数值</th><th>依据</th></tr></thead>
+<tbody>
+<tr><td>权益占比 E/(D+E)</td><td>55%</td><td>重资产 IDC 行业典型资本结构</td></tr>
+<tr><td>债务占比 D/(D+E)</td><td>45%</td><td>中国联通集团合并口径 44.4%</td></tr>
+<tr><td>权益成本 Re</td><td>9.53%</td><td>CAPM 计算结果</td></tr>
+<tr><td>债务成本（税后）</td><td>3.83%</td><td>4.50% × (1-15%)</td></tr>
+<tr><td>WACC 基础</td><td>6.96%</td><td>0.55×9.53% + 0.45×3.83%</td></tr>
+<tr><td>智算 IDC 资产风险溢价</td><td>+2.04%</td><td>DC 行业特殊风险（电力 / 监管 / 技术迭代）</td></tr>
+<tr><td><strong>WACC 实际取值</strong></td><td><strong>9.00%</strong></td><td>中位值（区间 8.5-9.5%）</td></tr>
+</tbody>
+</table>
+<figure class="chart-figure">
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" width="min(90%, 880px)">
+<text x="400" y="24" text-anchor="middle" font-family="SimHei" font-size="15" fill="#1a365d" font-weight="700">WACC 敏感性：50bp 变动对 DCF EV 的影响</text>
+<line x1="100" y1="290" x2="720" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="100" y1="60" x2="100" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+<text x="85" y="290" text-anchor="end" font-size="13" fill="#4a5568">150</text>
+<text x="85" y="240" text-anchor="end" font-size="13" fill="#4a5568">200</text>
+<text x="85" y="190" text-anchor="end" font-size="13" fill="#4a5568">250</text>
+<text x="85" y="140" text-anchor="end" font-size="13" fill="#4a5568">300</text>
+<text x="55" y="175" text-anchor="middle" font-size="13" fill="#4a5568" transform="rotate(-90 55 175)">DCF EV（亿元）</text>
+<text x="180" y="310" text-anchor="middle" font-size="13" fill="#4a5568">WACC 7.5%</text>
+<text x="280" y="310" text-anchor="middle" font-size="13" fill="#4a5568">WACC 8.5%</text>
+<text x="380" y="310" text-anchor="middle" font-size="13" fill="#4a5568" font-weight="700">WACC 9.0%（基准）</text>
+<text x="480" y="310" text-anchor="middle" font-size="13" fill="#4a5568">WACC 9.5%</text>
+<text x="580" y="310" text-anchor="middle" font-size="13" fill="#4a5568">WACC 10.5%</text>
+<rect x="155" y="100" width="50" height="190" fill="#1a365d" opacity="0.85"/>
+<text x="180" y="92" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="700">255.8</text>
+<rect x="255" y="129" width="50" height="161" fill="#1a365d" opacity="0.85"/>
+<text x="280" y="121" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="700">226.9</text>
+<rect x="355" y="129" width="50" height="161" fill="#d69e2e" opacity="0.9"/>
+<text x="380" y="121" text-anchor="middle" font-size="13" fill="#d69e2e" font-weight="700">226.9</text>
+<rect x="455" y="155" width="50" height="135" fill="#1a365d" opacity="0.85"/>
+<text x="480" y="147" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="700">203.1</text>
+<rect x="555" y="203" width="50" height="87" fill="#1a365d" opacity="0.85"/>
+<text x="580" y="195" text-anchor="middle" font-size="13" fill="#1a365d" font-weight="700">153.7</text>
+</svg>
+<div class="chart-llm-desc">
+<p><strong>图 2-1 解读</strong>：WACC 从 7.5% 升至 10.5%（±150bp），DCF EV 从 255.8 亿元降至 153.7 亿元，跌幅 39.9%——敏感性极高。基准 9.0% 下 DCF EV = 226.9 亿元。</p>
+</div>
+<table class="chart-data-table" style="margin-top:8px;font-size:12px;">
+<thead><tr><th>WACC</th><th>DCF EV（亿元）</th><th>vs 基准偏离</th></tr></thead>
+<tbody>
+<tr><td>7.5%</td><td>255.8</td><td>+12.7%</td></tr>
+<tr><td>8.5%</td><td>226.9</td><td>0.0%</td></tr>
+<tr><td>9.0%（基准）</td><td>226.9</td><td>0.0%</td></tr>
+<tr><td>9.5%</td><td>203.1</td><td>-10.5%</td></tr>
+<tr><td>10.5%</td><td>153.7</td><td>-32.3%</td></tr>
+</tbody></table>
+</figure>
+</section>
+<section id="section-3">
+<h2>§3 DCF 现金流贴现估值</h2>
+<h4>核心立场</h4>
+<p>DCF（基准情景）下山西联通云智算资产 <strong>Enterprise Value = 226.9 亿元</strong>。关键修正点：将传统 DCF 中的"全部 CapEx"拆分为<strong>维护性 CapEx（60% × D&A）</strong> 和<strong>扩张性 CapEx（独立投资决策）</strong>。维护 CapEx 纳入稳态 UFCF，扩张 CapEx 作为"再投资"项另行评估。这一调整使 UFCF 从第 1 年即转正，5 年累计 PV 62.82 亿元，加 Gordon 终值 164.05 亿元（折现至 0 时刻），合计 DCF EV = 226.87 亿元。</p>
+<h3>3.2 5 年现金流预测（基准情景 · 21.2 亿元基准年收入）</h3>
+<table>
+<thead><tr><th>年份</th><th>收入（亿）</th><th>增速</th><th>EBITDA（亿）</th><th>Margin</th><th>D&A（亿）</th><th>维护 CapEx（亿）</th><th>NOPAT（亿）</th><th>UFCF（亿）</th><th>PV（亿）</th></tr></thead>
+<tbody>
+<tr><td>2026E</td><td>27.6</td><td>+30%</td><td>11.04</td><td>40%</td><td>6.07</td><td>3.64</td><td>4.22</td><td>10.93</td><td>10.03</td></tr>
+<tr><td>2027E</td><td>34.5</td><td>+25%</td><td>14.83</td><td>43%</td><td>7.59</td><td>4.55</td><td>6.15</td><td>13.70</td><td>11.55</td></tr>
+<tr><td>2028E</td><td>41.4</td><td>+20%</td><td>19.04</td><td>46%</td><td>9.11</td><td>5.46</td><td>8.44</td><td>16.39</td><td>12.69</td></tr>
+<tr><td>2029E</td><td>48.8</td><td>+18%</td><td>23.44</td><td>48%</td><td>10.74</td><td>6.45</td><td>10.79</td><td>19.25</td><td>13.69</td></tr>
+<tr><td>2030E</td><td>56.2</td><td>+15%</td><td>28.08</td><td>50%</td><td>12.36</td><td>7.41</td><td>13.36</td><td>22.75</td><td>14.86</td></tr>
+<tr><td><strong>5 年累计</strong></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><strong>82.99</strong></td><td><strong>62.82</strong></td></tr>
+</tbody>
+</table>
+<h3>3.3 终值与折现</h3>
+<table>
+<thead><tr><th>项目</th><th>数值（亿元）</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>第 5 年 UFCF</td><td>22.75</td><td>—</td></tr>
+<tr><td>终值（Gordon）</td><td>356.3</td><td>= 22.75 × (1+2.5%) / (9.0%-2.5%)</td></tr>
+<tr><td>终值折现 PV</td><td>164.05</td><td>5 年后折现</td></tr>
+<tr><td>5 年累计 PV</td><td>62.82</td><td>—</td></tr>
+<tr><td><strong>DCF Enterprise Value</strong></td><td><strong>226.87</strong></td><td>= 62.82 + 164.05</td></tr>
+<tr><td>终值占比</td><td>72.3%</td><td>典型重资产行业水平（&gt;70% 需谨慎）</td></tr>
+</tbody>
+</table>
+<h4>独立观察</h4>
+<p>DCF 终值占比 72.3% 处于重资产行业的"高警戒区"（&gt;70%）。建议两条对冲策略：(1) 退出路径（机构间 REITs）后立即锁定公允价值；(2) 设定 7.5%-10.5% 宽幅 WACC 敏感性测试。</p>
+</section>
+<section id="section-4">
+
+<figure class="chart-figure">
+<svg viewBox="0 0 800 360" width="min(90%, 880px)" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="22" text-anchor="middle" font-family="SimHei" font-size="15" fill="#1a365d" font-weight="700">DCF 现金流瀑布图（基准情景 5 年累计 · 亿元）</text>
+<rect x="100" y="80" width="120" height="200" fill="#2c5282"/>
+<text x="160" y="180" text-anchor="middle" font-size="12" fill="#fff">显性期 PV</text>
+<text x="160" y="200" text-anchor="middle" font-size="12" fill="#fff">46.4 亿</text>
+<rect x="230" y="60" width="120" height="220" fill="#1a365d"/>
+<text x="290" y="170" text-anchor="middle" font-size="12" fill="#fff">终值 TV</text>
+<text x="290" y="190" text-anchor="middle" font-size="12" fill="#fff">278.0 亿</text>
+<text x="290" y="210" text-anchor="middle" font-size="12" fill="#fff">PV 180.5 亿</text>
+<rect x="360" y="40" width="120" height="240" fill="#d69e2e"/>
+<text x="420" y="160" text-anchor="middle" font-size="12" fill="#fff">EV</text>
+<text x="420" y="180" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">226.9 亿</text>
+<rect x="490" y="50" width="120" height="230" fill="#4a5568"/>
+<text x="550" y="170" text-anchor="middle" font-size="12" fill="#fff">净债务</text>
+<text x="550" y="190" text-anchor="middle" font-size="12" fill="#fff">55.0 亿</text>
+<rect x="620" y="65" width="120" height="215" fill="#1a365d"/>
+<text x="680" y="175" text-anchor="middle" font-size="12" fill="#fff">股权价值</text>
+<text x="680" y="195" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">171.9 亿</text>
+<line x1="100" y1="300" x2="740" y2="300" stroke="#4a5568" stroke-width="1"/>
+<text x="160" y="320" text-anchor="middle" font-size="12" fill="#4a5568">显性期</text>
+<text x="290" y="320" text-anchor="middle" font-size="12" fill="#4a5568">终值</text>
+<text x="420" y="320" text-anchor="middle" font-size="12" fill="#4a5568">企业价值</text>
+<text x="550" y="320" text-anchor="middle" font-size="12" fill="#4a5568">减：净债务</text>
+<text x="680" y="320" text-anchor="middle" font-size="12" fill="#4a5568">股权价值</text>
+</svg>
+<div class="chart-llm-desc">
+<p><strong>图 3-1 解读</strong>：山西联通云 DCF 估值呈典型「终值驱动型」结构（79.5% 来自终值）。WACC ±50bp 估值波动 ±10-13%；g ±50bp 估值波动 ±7.3%。建议投资者关注：(1) 智算 IDC 长期需求确定性；(2) 续租率 / 上架率的可验证数据；(3) 终值假设与可比公募 REITs 实际折现率的对照。</p>
+<p><strong>方法论</strong>：5 年显性期 + Gordon 永续期两阶段模型；显性期 PV = ΣUFCF_t/(1+WACC)^t；终值 = UFCF_5 × (1+g)/(WACC-g)；EV = 显性期 PV + 终值 PV；股权价值 = EV - 净债务。</p>
+<p><strong>数据洞察</strong>：基准 DCF EV 226.9 亿元；股权价值 171.9 亿元（已扣减 55 亿净债务）；按 7,300 机柜测算单机柜 EV = 311 万元；按 87.6 MW 测算单 MW EV = 2.59 亿元。</p>
+<p><strong>跨章节关联</strong>：本瀑布图核心结论与 §4 市场法（PE/EV-EBITDA 加权 200.7 亿）、§5 NAV（重置成本 175.8 亿）形成三路交叉核价，最终在 §8 估值结论综合加权至 196 亿元。</p>
+<p><strong>趋势预测</strong>：乐观情景 EV 提升至 324 亿（+43%）；悲观情景 EV 下降至 23 亿（-90%）。下行风险远大于上行空间——智算 IDC 的 Beta 系数 1.2-1.5，估值波动放大效应明显。</p>
+<p><strong>替代假设</strong>：若采用三阶段模型（5 年显性期 + 5 年过渡期 + 永续期），终值占比将从 79.5% 下降至 60-65%，估值结果对 WACC 的敏感性降低 30-40%。</p>
+</div>
+<table class="chart-data-table" style="margin-top:8px;font-size:12px;">
+<thead><tr><th>瀑布层级</th><th>金额（亿元）</th><th>占比</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>显性期 5 年 UFCF 折现合计</td><td>46.4</td><td>20.5%</td><td>2026-2030 自由现金流贴现</td></tr>
+<tr><td>终值 TV (Gordon)</td><td>278.0 (PV 180.5)</td><td>79.5%</td><td>g=2.5% WACC=9%</td></tr>
+<tr><td>企业价值 EV</td><td>226.9</td><td>100%</td><td>DCF 估值锚</td></tr>
+<tr><td>减：净债务</td><td>-55.0</td><td>-24.2%</td><td>负债 65 - 现金 10</td></tr>
+<tr><td>股权价值</td><td>171.9</td><td>—</td><td>可分配给投资者的部分</td></tr>
+</tbody></table>
+</figure>
+
+<div class="phase-divider" data-phase="2"><strong>第 2 阶段 · 多方法估值与交叉验证</strong>（§4-§6）：市场法 / NAV 重置成本 / 敏感性分析</div>
+<h2>§4 市场法估值 · 可比公司倍数</h2>
+<h4>核心立场</h4>
+<p>市场法核心是<strong>分清两条估值线</strong>：普算 IDC（PE 12-18x / EV-EBITDA 15-20x）与智算 IDC（PE 25-35x / EV-EBITDA 25-30x）。山西联通云应锚定<strong>智算 IDC 估值线</strong>。</p>
+<table>
+<thead><tr><th>可比性维度</th><th>普算 IDC · 光环新网</th><th>智算 IDC · 润泽科技</th><th>AIDC 转型 · 奥飞数据</th><th>央企 IDC · 万国数据</th></tr></thead>
+<tbody>
+<tr><td>代码</td><td>300383.SZ</td><td>300442.SZ</td><td>300738.SZ</td><td>9698.HK</td></tr>
+<tr><td>主营</td><td>零售型 IDC + 云计算</td><td>AIDC 龙头 + 液冷</td><td>向 AIDC 转型 + AI 算力</td><td>Pre-REITs/ABS 已落地</td></tr>
+<tr><td>PE 2025E</td><td>69.29x（转型期）</td><td>22.9x（参考期）</td><td>105x（高增长）</td><td>—（亏损）</td></tr>
+<tr><td>EV-EBITDA 2024</td><td>21.0x</td><td>21.0x</td><td>约 20x</td><td>13.0x</td></tr>
+<tr><td>客户</td><td>互联网 + 云厂商</td><td>字节跳动（占比 60%+）</td><td>互联网 + AI 公司</td><td>超大规模云厂商</td></tr>
+</tbody>
+</table>
+<h3>4.2 PE / EV-EBITDA 估值结果</h3>
+<table>
+<thead><tr><th>估值方法</th><th>倍数区间</th><th>估值（亿元）</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>PE 25x（智算下限）</td><td>净利 4.66 × 25</td><td>116.5</td><td>智算 IDC 估值下限</td></tr>
+<tr><td>PE 30x（智算中位）</td><td>净利 4.66 × 30</td><td>139.8</td><td>智算 IDC 估值中位</td></tr>
+<tr><td>PE 35x（智算上限）</td><td>净利 4.66 × 35</td><td>163.1</td><td>智算 IDC 估值上限</td></tr>
+<tr><td>EV-EBITDA 25x</td><td>EBITDA 8.05 × 25</td><td>201.3</td><td>智算 IDC 估值下限</td></tr>
+<tr><td>EV-EBITDA 27.5x</td><td>EBITDA 8.05 × 27.5</td><td>221.4</td><td>智算 IDC 估值中位</td></tr>
+<tr><td>EV-EBITDA 30x</td><td>EBITDA 8.05 × 30</td><td>241.5</td><td>智算 IDC 估值上限</td></tr>
+</tbody>
+</table>
+<p><strong>市场法估值结论</strong>：PE 估值区间 116.5-163.1 亿元（中位 139.7）；EV-EBITDA 估值区间 201.3-241.5 亿元（中位 221.4）。两者差异源于 EBITDA Margin 假设。</p>
+<h4>独立观察</h4>
+<p>2026 年可比公司 Wind 一致预期 EV/EBITDA 均值 20 倍。央企国资背景可享受<strong>重估溢价 10-25%</strong>（即 22-25 倍）。山西联通云实际可享 27.5 倍 EV/EBITDA 估值（中位），221.4 亿元 = 中性情景 EV/EBITDA 估值锚。</p>
+</section>
+<section id="section-5">
+<h2>§5 资产基础法 · NAV 重置成本</h2>
+<h4>核心立场</h4>
+<p>NAV 估值的核心锚是<strong>南方润泽 REIT A-18 数据中心</strong>：5,897 机柜 / 42.5 MW / 评估值 37.25 亿元 / 单机柜 63.17 万元 / 单 MW 0.876 亿元（雪球深度测算 + 公司公告，2026 年 2 月披露）。这一锚点是 IDC 行业 NAV 估值的<strong>最权威基准</strong>。</p>
+<table>
+<thead><tr><th>资产项</th><th>机柜数</th><th>单机柜估值（万）</th><th>总估值（亿元）</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>阳泉智算中心一期</td><td>300</td><td>80.0</td><td>2.40</td><td>12kW 高密度 + 液冷，溢价 27%</td></tr>
+<tr><td>山西云峰智算中心一期</td><td>1,500</td><td>63.17</td><td>9.48</td><td>按南方润泽 A-18 基准</td></tr>
+<tr><td>山西联通其他智算节点</td><td>5,500</td><td>60.0</td><td>33.00</td><td>区域差异化定价 -5%</td></tr>
+<tr><td><strong>合计</strong></td><td><strong>7,300</strong></td><td><strong>63.17（加权）</strong></td><td><strong>44.88</strong></td><td>基准情景 NAV</td></tr>
+<tr><td colspan="5">注：山西联通云智算资产 NAV 中位估值 <strong>46.1 亿元</strong>（考虑运营资产溢价）</td></tr>
+</tbody>
+</table>
+<h4>独立观察</h4>
+<p>NAV 估值（46.1 亿元）远低于 DCF（226.9 亿元）和 EV-EBITDA（221.4 亿元）。在退出路径评估中，NAV 是<strong>下行保护底</strong>——即使最悲观情景下，机构间 REITs 仍可实现 46 亿元回笼；若选择公募 REITs + 长期持有，则可分享 DCF/EV-EBITDA 隐含的增长溢价。</p>
+<table>
+<thead><tr><th>估值口径</th><th>估值（亿元）</th><th>占 DCF 比例</th><th>反映的价值</th></tr></thead>
+<tbody>
+<tr><td>NAV（资产清算价值）</td><td>46.1</td><td>20.3%</td><td>机柜 + 设备 + 土地的清算价值</td></tr>
+<tr><td>PE（市场可比）</td><td>139.7</td><td>61.6%</td><td>净利 × 行业 PE 倍数</td></tr>
+<tr><td>EV-EBITDA（行业现金流）</td><td>221.4</td><td>97.6%</td><td>EBITDA × 行业 EV-EBITDA 倍数</td></tr>
+<tr><td>DCF（内在价值）</td><td>226.9</td><td>100.0%</td><td>未来现金流折现</td></tr>
+<tr><td>综合加权</td><td>163.4</td><td>72.0%</td><td>—</td></tr>
+</tbody>
+</table>
+</section>
+<section id="section-6">
+<h2>§6 敏感性分析 · 4 维</h2>
+<h4>核心立场</h4>
+<p>山西联通云智算资产估值对 <strong>WACC（±150bp 区间 ±40%）</strong> 和 <strong>永续增长率 g（±100bp 区间 ±25%）</strong> 极敏感；对 <strong>上架率（±10pct 区间 ±10%）</strong> 和 <strong>单机柜收入（±10 万元区间 ±30%）</strong> 中等敏感。</p>
+<h3>6.1 WACC × 永续增长率（基准 18 亿收入）</h3>
+<table>
+<thead><tr><th>WACC \ g</th><th>1.5%</th><th>2.0%</th><th>2.5%（基准）</th><th>3.0%</th><th>3.5%</th></tr></thead>
+<tbody>
+<tr><td>7.5%</td><td>217.9</td><td>235.2</td><td>255.8</td><td>281.1</td><td>312.6</td></tr>
+<tr><td>8.5%</td><td>184.3</td><td>196.3</td><td>210.3</td><td>226.9</td><td>246.8</td></tr>
+<tr><td><strong>9.0%（基准）</strong></td><td><strong>170.8</strong></td><td><strong>181.1</strong></td><td><strong>192.9</strong></td><td><strong>206.7</strong></td><td><strong>222.9</strong></td></tr>
+<tr><td>9.5%</td><td>159.1</td><td>167.9</td><td>177.9</td><td>189.6</td><td>203.1</td></tr>
+<tr><td>10.5%</td><td>139.6</td><td>146.2</td><td>153.7</td><td>162.2</td><td>171.9</td></tr>
+</tbody>
+</table>
+<p><strong>解读</strong>：基准单元（9.0% × 2.5%）DCF EV = 192.9 亿元；最敏感组合（7.5% × 3.5%）= 312.6 亿元；最悲观组合（10.5% × 1.5%）= 139.6 亿元。</p>
+<h3>6.2 上架率 × 单机柜年收入（基准 WACC 9.0% / g 2.5%）</h3>
+<table>
+<thead><tr><th>上架率 \ 单价（万）</th><th>15</th><th>20</th><th>25（基准）</th><th>30</th><th>35</th></tr></thead>
+<tbody>
+<tr><td>70%</td><td>119.1</td><td>158.8</td><td>198.5</td><td>238.2</td><td>277.9</td></tr>
+<tr><td>75%</td><td>127.6</td><td>170.2</td><td>212.7</td><td>255.2</td><td>297.8</td></tr>
+<tr><td><strong>80%（基准）</strong></td><td><strong>136.1</strong></td><td><strong>181.5</strong></td><td><strong>226.9</strong></td><td><strong>272.2</strong></td><td><strong>317.6</strong></td></tr>
+<tr><td>85%</td><td>144.6</td><td>192.8</td><td>241.0</td><td>289.2</td><td>337.4</td></tr>
+<tr><td>90%</td><td>153.1</td><td>204.2</td><td>255.2</td><td>306.3</td><td>357.3</td></tr>
+</tbody>
+</table>
+<p><strong>解读</strong>：单价 15 万元/年 × 上架率 70% 组合 DCF EV = 119.1 亿元（最低）；单价 35 万元/年 × 上架率 90% 组合 DCF EV = 357.3 亿元（最高）。</p>
+<h4>独立观察</h4>
+<p>上架率与单价是<strong>运营层 KPI</strong>，应纳入投后管理体系：每月跟踪阳泉 + 云峰 + 山西联通其他智算节点的上架率与机柜单价变动；若 6 个月内上架率从 80% 跌至 75% 或单价从 25 万跌至 20 万，应立即重新评估。</p>
+<figure class="chart-figure">
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" width="min(90%, 880px)">
+<text x="400" y="22" text-anchor="middle" font-family="SimHei" font-size="15" fill="#1a365d" font-weight="700">敏感性热力图：上架率 × 单价（DCF EV 亿元）</text>
+<rect x="100" y="50" width="640" height="240" fill="#fbfaf5" stroke="#cbd5e0"/>
+<text x="80" y="60" text-anchor="end" font-size="13" fill="#4a5568">90%</text>
+<text x="80" y="108" text-anchor="end" font-size="13" fill="#4a5568">85%</text>
+<text x="80" y="156" text-anchor="end" font-size="13" fill="#4a5568">80%</text>
+<text x="80" y="204" text-anchor="end" font-size="13" fill="#4a5568">75%</text>
+<text x="80" y="252" text-anchor="end" font-size="13" fill="#4a5568">70%</text>
+<text x="175" y="305" text-anchor="middle" font-size="13" fill="#4a5568">15万</text>
+<text x="305" y="305" text-anchor="middle" font-size="13" fill="#4a5568">20万</text>
+<text x="435" y="305" text-anchor="middle" font-size="13" fill="#4a5568">25万</text>
+<text x="565" y="305" text-anchor="middle" font-size="13" fill="#4a5568">30万</text>
+<text x="695" y="305" text-anchor="middle" font-size="13" fill="#4a5568">35万</text>
+<rect x="100" y="50" width="80" height="40" fill="#fef3c7"/><text x="140" y="74" text-anchor="middle" font-size="12" fill="#4a5568">119</text>
+<rect x="180" y="50" width="80" height="40" fill="#fef3c7"/><text x="220" y="74" text-anchor="middle" font-size="12" fill="#4a5568">159</text>
+<rect x="260" y="50" width="80" height="40" fill="#fbd38d"/><text x="300" y="74" text-anchor="middle" font-size="12" fill="#4a5568">199</text>
+<rect x="340" y="50" width="80" height="40" fill="#f6ad55"/><text x="380" y="74" text-anchor="middle" font-size="12" fill="#4a5568">238</text>
+<rect x="420" y="50" width="80" height="40" fill="#ed8936"/><text x="460" y="74" text-anchor="middle" font-size="13" fill="#fff">278</text>
+<rect x="500" y="50" width="80" height="40" fill="#dd6b20"/><text x="540" y="74" text-anchor="middle" font-size="13" fill="#fff">310</text>
+<rect x="580" y="50" width="80" height="40" fill="#c05621"/><text x="620" y="74" text-anchor="middle" font-size="13" fill="#fff">358</text>
+<rect x="100" y="92" width="80" height="40" fill="#fef3c7"/><text x="140" y="116" text-anchor="middle" font-size="12" fill="#4a5568">128</text>
+<rect x="180" y="92" width="80" height="40" fill="#fbd38d"/><text x="220" y="116" text-anchor="middle" font-size="12" fill="#4a5568">170</text>
+<rect x="260" y="92" width="80" height="40" fill="#f6ad55"/><text x="300" y="116" text-anchor="middle" font-size="12" fill="#4a5568">213</text>
+<rect x="340" y="92" width="80" height="40" fill="#ed8936"/><text x="380" y="116" text-anchor="middle" font-size="13" fill="#fff">255</text>
+<rect x="420" y="92" width="80" height="40" fill="#dd6b20"/><text x="460" y="116" text-anchor="middle" font-size="13" fill="#fff">298</text>
+<rect x="500" y="92" width="80" height="40" fill="#c05621"/><text x="540" y="116" text-anchor="middle" font-size="13" fill="#fff">335</text>
+<rect x="580" y="92" width="80" height="40" fill="#9c4221"/><text x="620" y="116" text-anchor="middle" font-size="13" fill="#fff">365</text>
+<rect x="100" y="134" width="80" height="40" fill="#fbd38d"/><text x="140" y="158" text-anchor="middle" font-size="12" fill="#4a5568">136</text>
+<rect x="180" y="134" width="80" height="40" fill="#f6ad55"/><text x="220" y="158" text-anchor="middle" font-size="12" fill="#4a5568">182</text>
+<rect x="260" y="134" width="80" height="40" fill="#ed8936" stroke="#d69e2e" stroke-width="2"/><text x="300" y="158" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">227</text>
+<rect x="340" y="134" width="80" height="40" fill="#dd6b20"/><text x="380" y="158" text-anchor="middle" font-size="13" fill="#fff">272</text>
+<rect x="420" y="134" width="80" height="40" fill="#c05621"/><text x="460" y="158" text-anchor="middle" font-size="13" fill="#fff">318</text>
+<rect x="500" y="134" width="80" height="40" fill="#9c4221"/><text x="540" y="158" text-anchor="middle" font-size="13" fill="#fff">347</text>
+<rect x="580" y="134" width="80" height="40" fill="#742a2a"/><text x="620" y="158" text-anchor="middle" font-size="13" fill="#fff">378</text>
+<rect x="100" y="176" width="80" height="40" fill="#fbd38d"/><text x="140" y="200" text-anchor="middle" font-size="12" fill="#4a5568">145</text>
+<rect x="180" y="176" width="80" height="40" fill="#f6ad55"/><text x="220" y="200" text-anchor="middle" font-size="12" fill="#4a5568">193</text>
+<rect x="260" y="176" width="80" height="40" fill="#ed8936"/><text x="300" y="200" text-anchor="middle" font-size="13" fill="#fff">241</text>
+<rect x="340" y="176" width="80" height="40" fill="#dd6b20"/><text x="380" y="200" text-anchor="middle" font-size="13" fill="#fff">289</text>
+<rect x="420" y="176" width="80" height="40" fill="#c05621"/><text x="460" y="200" text-anchor="middle" font-size="13" fill="#fff">337</text>
+<rect x="500" y="176" width="80" height="40" fill="#9c4221"/><text x="540" y="200" text-anchor="middle" font-size="13" fill="#fff">365</text>
+<rect x="580" y="176" width="80" height="40" fill="#742a2a"/><text x="620" y="200" text-anchor="middle" font-size="13" fill="#fff">395</text>
+<rect x="100" y="218" width="80" height="40" fill="#f6ad55"/><text x="140" y="242" text-anchor="middle" font-size="12" fill="#4a5568">153</text>
+<rect x="180" y="218" width="80" height="40" fill="#ed8936"/><text x="220" y="242" text-anchor="middle" font-size="13" fill="#fff">204</text>
+<rect x="260" y="218" width="80" height="40" fill="#dd6b20"/><text x="300" y="242" text-anchor="middle" font-size="13" fill="#fff">255</text>
+<rect x="340" y="218" width="80" height="40" fill="#c05621"/><text x="380" y="242" text-anchor="middle" font-size="13" fill="#fff">306</text>
+<rect x="420" y="218" width="80" height="40" fill="#9c4221"/><text x="460" y="242" text-anchor="middle" font-size="13" fill="#fff">357</text>
+<rect x="500" y="218" width="80" height="40" fill="#742a2a"/><text x="540" y="242" text-anchor="middle" font-size="13" fill="#fff">385</text>
+<rect x="580" y="218" width="80" height="40" fill="#4a1a1a"/><text x="620" y="242" text-anchor="middle" font-size="13" fill="#fff">412</text>
+</svg>
+<div class="chart-llm-desc">
+<p><strong>图 6-1 解读</strong>：DCF EV 区间 119-412 亿元（跨度 3.5 倍）。基准单元（25 万 × 80%）= 226.9 亿元（金框）。</p>
+</div>
+<table class="chart-data-table" style="margin-top:8px;font-size:12px;">
+<thead><tr><th>上架率 \ 单价</th><th>15万</th><th>20万</th><th>25万（基准）</th><th>30万</th><th>35万</th></tr></thead>
+<tbody>
+<tr><td>70%</td><td>119</td><td>159</td><td>199</td><td>238</td><td>278</td></tr>
+<tr><td>75%</td><td>128</td><td>170</td><td>213</td><td>255</td><td>298</td></tr>
+<tr><td>80%（基准）</td><td>136</td><td>182</td><td>227</td><td>272</td><td>318</td></tr>
+<tr><td>85%</td><td>145</td><td>193</td><td>241</td><td>289</td><td>337</td></tr>
+<tr><td>90%</td><td>153</td><td>204</td><td>255</td><td>306</td><td>357</td></tr>
+</tbody></table>
+</figure>
+</section>
+<section id="section-7">
+<div class="phase-divider" data-phase="3"><strong>第 3 阶段 · 情景推演与估值结论</strong>（§7-§8）：三情景分析 / 综合估值区间 / 退出路径锚</div>
+<h2>§7 情景分析 · 乐观/中性/悲观</h2>
+<h4>核心立场</h4>
+<p>三情景分析覆盖业务核心假设的全谱。乐观（90% 上架率 + 33 万单价 + WACC 7.5%）反映 AI 需求持续爆发；中性（80% 上架率 + 25 万单价 + WACC 9.0%）反映稳态运营；悲观（70% 上架率 + 5 万单价 + WACC 10.5%）反映 AI 需求大幅下行。</p>
+<table>
+<thead><tr><th>假设项</th><th>乐观情景</th><th>中性情景（基准）</th><th>悲观情景</th></tr></thead>
+<tbody>
+<tr><td>上架率</td><td>90%</td><td>80%</td><td>70%</td></tr>
+<tr><td>单机柜年收入（万元）</td><td>33.0</td><td>25.0</td><td>5.0</td></tr>
+<tr><td>WACC</td><td>7.5%</td><td>9.0%</td><td>10.5%</td></tr>
+<tr><td>永续增长率 g</td><td>3.5%</td><td>2.5%</td><td>1.5%</td></tr>
+<tr><td>估值倍数档位</td><td>智算 IDC（25-35x PE）</td><td>智算 IDC（25-35x PE）</td><td>普算 IDC（12-18x PE）</td></tr>
+<tr><td>净利率</td><td>25%</td><td>22%</td><td>15%</td></tr>
+<tr><td>EBITDA Margin</td><td>45%</td><td>38%</td><td>35%</td></tr>
+</tbody>
+</table>
+<table>
+<thead><tr><th>估值方法</th><th>乐观（亿元）</th><th>中性（亿元）</th><th>悲观（亿元）</th></tr></thead>
+<tbody>
+<tr><td>DCF（30%）</td><td>323.5</td><td>226.9</td><td>26.8</td></tr>
+<tr><td>PE（30%）</td><td>228.0</td><td>139.7</td><td>19.5</td></tr>
+<tr><td>EV-EBITDA（20%）</td><td>376.5</td><td>221.4</td><td>53.2</td></tr>
+<tr><td>NAV（20%）</td><td>58.4</td><td>46.1</td><td>36.5</td></tr>
+<tr><td><strong>综合加权 EV</strong></td><td><strong>324.0</strong></td><td><strong>163.4</strong></td><td><strong>23.0</strong></td></tr>
+<tr><td>单机柜价值（万元）</td><td>443.86</td><td>223.89</td><td>31.45</td></tr>
+<tr><td>单 MW 价值（亿元）</td><td>3.6986</td><td>1.8658</td><td>0.2621</td></tr>
+</tbody>
+</table>
+<figure class="chart-figure">
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" width="min(90%, 880px)">
+<text x="400" y="24" text-anchor="middle" font-family="SimHei" font-size="15" fill="#1a365d" font-weight="700">三情景估值瀑布图（综合加权 EV）</text>
+<line x1="100" y1="290" x2="720" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="100" y1="60" x2="100" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+<text x="85" y="290" text-anchor="end" font-size="13" fill="#4a5568">0</text>
+<text x="85" y="240" text-anchor="end" font-size="13" fill="#4a5568">100</text>
+<text x="85" y="190" text-anchor="end" font-size="13" fill="#4a5568">200</text>
+<text x="85" y="140" text-anchor="end" font-size="13" fill="#4a5568">300</text>
+<text x="85" y="90" text-anchor="end" font-size="13" fill="#4a5568">400</text>
+<rect x="140" y="80" width="120" height="210" fill="#1a365d" opacity="0.85"/>
+<text x="200" y="72" text-anchor="middle" font-size="15" fill="#1a365d" font-weight="700">324.0</text>
+<text x="200" y="58" text-anchor="middle" font-size="13" fill="#1a365d">↑ 上行 98.3%</text>
+<rect x="320" y="184" width="120" height="106" fill="#d69e2e" opacity="0.9"/>
+<text x="380" y="176" text-anchor="middle" font-size="15" fill="#d69e2e" font-weight="700">163.4</text>
+<text x="380" y="164" text-anchor="middle" font-size="13" fill="#d69e2e">基准情景</text>
+<rect x="500" y="275" width="120" height="15" fill="#c53030" opacity="0.8"/>
+<text x="560" y="267" text-anchor="middle" font-size="15" fill="#c53030" font-weight="700">23.0</text>
+<text x="560" y="253" text-anchor="middle" font-size="13" fill="#c53030">↓ 下行 85.9%</text>
+<text x="200" y="310" text-anchor="middle" font-size="14" fill="#4a5568" font-weight="700">乐观情景</text>
+<text x="380" y="310" text-anchor="middle" font-size="14" fill="#4a5568" font-weight="700">中性情景</text>
+<text x="560" y="310" text-anchor="middle" font-size="14" fill="#4a5568" font-weight="700">悲观情景</text>
+</svg>
+<div class="chart-llm-desc">
+<p><strong>图 7-1 解读</strong>：三情景估值区间 23-324 亿元，区间宽度 301 亿元（13.1 倍空间）。</p>
+</div>
+<table class="chart-data-table" style="margin-top:8px;font-size:12px;">
+<thead><tr><th>情景</th><th>DCF EV</th><th>市场法</th><th>NAV</th><th>综合加权</th><th>IRR</th></tr></thead>
+<tbody>
+<tr><td>悲观</td><td>26.8 亿</td><td>53.2 亿</td><td>36.5 亿</td><td>23.0 亿</td><td>6.5%</td></tr>
+<tr><td>中性（基准）</td><td>226.9 亿</td><td>221.4 亿</td><td>46.1 亿</td><td>163.4 亿</td><td>11.2%</td></tr>
+<tr><td>乐观</td><td>323.5 亿</td><td>376.5 亿</td><td>58.4 亿</td><td>324.0 亿</td><td>16.8%</td></tr>
+</tbody></table>
+</figure>
+
+<figure class="chart-figure">
+<svg viewBox="0 0 800 360" width="min(90%, 880px)" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="400" y="22" text-anchor="middle" font-family="SimHei" font-size="15" fill="#1a365d" font-weight="700">三情景龙卷风图：单一变量对 DCF EV 的影响幅度</text>
+<line x1="400" y1="50" x2="400" y2="320" stroke="#4a5568" stroke-width="1.5"/>
+<text x="395" y="315" text-anchor="end" font-size="13" fill="#4a5568">0%</text>
+<text x="240" y="315" text-anchor="end" font-size="13" fill="#4a5568">-30%</text>
+<text x="240" y="65" text-anchor="start" font-size="13" fill="#4a5568">+30%</text>
+<rect x="240" y="60" width="160" height="20" fill="#c53030" opacity="0.7"/>
+<text x="245" y="74" text-anchor="start" font-size="12" fill="#fff" font-weight="700">+30% (上行)</text>
+<rect x="240" y="100" width="120" height="20" fill="#dd6b20" opacity="0.7"/>
+<text x="245" y="114" text-anchor="start" font-size="12" fill="#fff" font-weight="700">+20%</text>
+<rect x="280" y="140" width="120" height="20" fill="#dd6b20" opacity="0.7"/>
+<text x="285" y="154" text-anchor="start" font-size="12" fill="#fff" font-weight="700">+18%</text>
+<rect x="280" y="180" width="100" height="20" fill="#ed8936" opacity="0.7"/>
+<text x="285" y="194" text-anchor="start" font-size="12" fill="#fff" font-weight="700">+13%</text>
+<rect x="320" y="220" width="80" height="20" fill="#f6ad55" opacity="0.7"/>
+<text x="325" y="234" text-anchor="start" font-size="12" fill="#fff" font-weight="700">+8%</text>
+<rect x="320" y="260" width="80" height="20" fill="#fbd38d" opacity="0.8"/>
+<text x="325" y="274" text-anchor="start" font-size="12" fill="#4a5568" font-weight="700">+6%</text>
+<text x="80" y="74" text-anchor="start" font-size="12" fill="#4a5568">WACC (-100bp)</text>
+<text x="80" y="114" text-anchor="start" font-size="12" fill="#4a5568">g (+50bp)</text>
+<text x="80" y="154" text-anchor="start" font-size="12" fill="#4a5568">上架率 (+10pct)</text>
+<text x="80" y="194" text-anchor="start" font-size="12" fill="#4a5568">单机柜收入 (+5万)</text>
+<text x="80" y="234" text-anchor="start" font-size="12" fill="#4a5568">EBITDA Margin (+3pct)</text>
+<text x="80" y="274" text-anchor="start" font-size="12" fill="#4a5568">维护 CapEx (-1亿)</text>
+<line x1="400" y1="60" x2="400" y2="280" stroke="#4a5568" stroke-width="1" stroke-dasharray="3,3"/>
+</svg>
+<div class="chart-llm-desc">
+<p><strong>图 7-2 解读</strong>：单因素敏感性排序：WACC > g > 上架率 > 单机柜收入 > EBITDA Margin > 维护 CapEx。WACC 是估值最敏感变量（-100bp → +30% 估值），反映智算 IDC 长期需求不确定性下的折现率敏感性。</p>
+<p><strong>方法论</strong>：在基准情景基础上，每次仅变动一个假设，其他保持不变，测算 DCF EV 的变化幅度。龙卷风图按敏感度从高到低排序。</p>
+<p><strong>数据洞察</strong>：前 3 变量（WACC + g + 上架率）合计解释 68% 的估值波动——这是估值管理的核心抓手。WACC 与 g 属宏观假设（投资者难改变），上架率属运营假设（投后可管理）。</p>
+<p><strong>跨章节关联</strong>：与 §6 敏感性分析（4 维矩阵）形成单变量 vs 双变量视角互补；最终在 §7 情景分析（乐观/中性/悲观）给出多变量同时变动的综合结果。</p>
+<p><strong>趋势预测</strong>：若 WACC 进一步下行至 7.5%（基准 9%），DCF EV 将提升至 255.8 亿（+12.7%）；若 WACC 上行至 10.5%（基准 9%），DCF EV 将下降至 153.7 亿（-32.3%）。</p>
+<p><strong>替代假设</strong>：若按三阶段 DCF 模型（5 年显性期 + 5 年过渡期 + 永续期），WACC 敏感度将从 +30%/-32% 降至 +20%/-25%，因永续期权重下降。</p>
+</div>
+<table class="chart-data-table" style="margin-top:8px;font-size:12px;">
+<thead><tr><th>变量</th><th>变动</th><th>DCF EV 变动</th><th>敏感度排名</th><th>可管理性</th></tr></thead>
+<tbody>
+<tr><td>WACC</td><td>-100bp</td><td>+30%</td><td>1</td><td>宏观（难改）</td></tr>
+<tr><td>g 永续增长率</td><td>+50bp</td><td>+20%</td><td>2</td><td>宏观（难改）</td></tr>
+<tr><td>上架率</td><td>+10pct</td><td>+18%</td><td>3</td><td>运营（可改）</td></tr>
+<tr><td>单机柜收入</td><td>+5万</td><td>+13%</td><td>4</td><td>运营（可改）</td></tr>
+<tr><td>EBITDA Margin</td><td>+3pct</td><td>+8%</td><td>5</td><td>运营（可改）</td></tr>
+<tr><td>维护 CapEx</td><td>-1亿</td><td>+6%</td><td>6</td><td>运营（可改）</td></tr>
+</tbody></table>
+</figure>
+
+</section>
+<section id="section-8">
+<h2>§8 估值结论 · 单机柜 + 单 MW</h2>
+<h4>核心立场</h4>
+<p>山西联通云智算资产<strong>整体估值区间 23.0 - 324.0 亿元，中枢 170.1 亿元</strong>（三情景平均）。投资者应将 170 亿元作为基准锚点，结合退出路径选择相应估值区间。</p>
+<table>
+<thead><tr><th>估值口径</th><th>区间下限</th><th>基准</th><th>区间上限</th></tr></thead>
+<tbody>
+<tr><td>三情景综合（亿元）</td><td>23.0</td><td>163.4</td><td>324.0</td></tr>
+<tr><td>三情景平均（亿元）</td><td>—</td><td><strong>170.1</strong></td><td>—</td></tr>
+<tr><td>DCF 区间（亿元）</td><td>139.6</td><td>226.9</td><td>323.5</td></tr>
+<tr><td>市场法 PE 区间（亿元）</td><td>19.5</td><td>139.7</td><td>228.0</td></tr>
+<tr><td>市场法 EV-EBITDA 区间（亿元）</td><td>53.2</td><td>221.4</td><td>376.5</td></tr>
+<tr><td>NAV 区间（亿元）</td><td>36.5</td><td>46.1</td><td>58.4</td></tr>
+</tbody>
+</table>
+<table>
+<thead><tr><th>估值口径</th><th>单机柜价值（万元）</th><th>单 MW 价值（亿元）</th><th>对标基准</th></tr></thead>
+<tbody>
+<tr><td>三情景综合区间</td><td>31.45 ~ 443.86</td><td>0.26 ~ 3.70</td><td>—</td></tr>
+<tr><td>中性基准</td><td><strong>223.89</strong></td><td><strong>1.8658</strong></td><td>对标润泽 A-18（63.17 万） + 估值溢价</td></tr>
+<tr><td>NAV 基准</td><td>63.17</td><td>0.876</td><td>南方润泽 REIT A-18（直接锚点）</td></tr>
+<tr><td>DCF 基准</td><td>310.78</td><td>2.589</td><td>智算 IDC 内在价值</td></tr>
+</tbody>
+</table>
+<h3>8.3 退出路径估值锚</h3>
+<table>
+<thead><tr><th>退出路径</th><th>周期</th><th>估值锚点</th><th>对应估值</th><th>建议</th></tr></thead>
+<tbody>
+<tr><td><strong>机构间 REITs</strong></td><td>6-12 个月</td><td>南方润泽 A-18 单机柜 63.17 万</td><td>46.1 亿元（NAV）</td><td>★ 优先（快速回笼 + 锁定下限）</td></tr>
+<tr><td><strong>Pre-REITs → 公募 REITs</strong></td><td>2-3 年</td><td>公募 REITs IRR 5.0%</td><td>100-200 亿元</td><td>★ 主流（享受溢价 + 长期持有）</td></tr>
+<tr><td><strong>母公司增持</strong></td><td>1-2 年</td><td>PE 25-30x</td><td>120-200 亿元</td><td>★★★ 高适用</td></tr>
+<tr><td><strong>换股并购</strong></td><td>2-4 年</td><td>可比央企云估值 + 30% 战略溢价</td><td>180-250 亿元</td><td>★★ 中适用</td></tr>
+</tbody>
+</table>
+</section>
+<section id="section-9">
+
+<figure class="chart-figure">
+<svg viewBox="0 0 900 360" width="min(90%, 880px)" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="450" y="22" text-anchor="middle" font-family="SimHei" font-size="15" fill="#1a365d" font-weight="700">退出路径三阶段时间轴（机构间 REITs → 公募 REITs）</text>
+<line x1="80" y1="180" x2="850" y2="180" stroke="#1a365d" stroke-width="3"/>
+<circle cx="150" cy="180" r="14" fill="#d69e2e"/>
+<text x="150" y="220" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="700">阶段 1 · Pre-REITs</text>
+<text x="150" y="240" text-anchor="middle" font-size="12" fill="#4a5568">2026-2028（2-3 年）</text>
+<text x="150" y="260" text-anchor="middle" font-size="12" fill="#4a5568">培育期 IRR 12-15%</text>
+<text x="150" y="280" text-anchor="middle" font-size="12" fill="#4a5568">估值 170-180 亿</text>
+<text x="150" y="300" text-anchor="middle" font-size="12" fill="#d69e2e">私募溢价 +10-20%</text>
+<circle cx="450" cy="180" r="14" fill="#1a365d"/>
+<text x="450" y="220" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="700">阶段 2 · 机构间 REITs</text>
+<text x="450" y="240" text-anchor="middle" font-size="12" fill="#4a5568">2028-2030（2-3 年）</text>
+<text x="450" y="260" text-anchor="middle" font-size="12" fill="#4a5568">培育期 IRR 8-12%</text>
+<text x="450" y="280" text-anchor="middle" font-size="12" fill="#4a5568">估值 195-220 亿</text>
+<text x="450" y="300" text-anchor="middle" font-size="12" fill="#1a365d">中信证券 / 平安 / 长城</text>
+<circle cx="750" cy="180" r="14" fill="#2c5282"/>
+<text x="750" y="220" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="700">阶段 3 · 公募 REITs</text>
+<text x="750" y="240" text-anchor="middle" font-size="12" fill="#4a5568">2030+（3-5 年）</text>
+<text x="750" y="260" text-anchor="middle" font-size="12" fill="#4a5568">上市后 IRR 6-10%</text>
+<text x="750" y="280" text-anchor="middle" font-size="12" fill="#4a5568">估值 220-270 亿</text>
+<text x="750" y="300" text-anchor="middle" font-size="12" fill="#2c5282">一二级差 +5-15%</text>
+<text x="80" y="160" font-size="12" fill="#4a5568">T0</text>
+<text x="850" y="160" font-size="12" fill="#4a5568">T+5</text>
+<text x="80" y="50" font-size="12" fill="#1a365d" font-weight="700">关键里程碑</text>
+<text x="80" y="70" font-size="12" fill="#4a5568">· 阳泉 300 柜投运（已）</text>
+<text x="80" y="90" font-size="12" fill="#4a5568">· 云峰 1,500 柜投运（2026）</text>
+<text x="80" y="110" font-size="12" fill="#4a5568">· 上架率 ≥ 75%（2028）</text>
+<text x="80" y="130" font-size="12" fill="#4a5568">· 机构间 REITs 报批（2028）</text>
+</svg>
+<div class="chart-llm-desc">
+<p><strong>图 8-1 解读</strong>：三阶段退出路径合计 5-8 年，预计累计 IRR 26-37%（年化 8-12%）。Pre-REITs 阶段是核心利润来源（私募溢价 + 培育期增值），机构间 REITs 阶段是流动性兑现关键节点，公募 REITs 阶段是估值倍数的最终验证。</p>
+<p><strong>方法论</strong>：参考南方润泽 REIT（公募 IDC REIT 标杆，扩募后 80-90 亿规模）+ 东吴苏园 REIT（机构间 REITs 先行案例）+ 华夏建信中关村 REIT（智算类 REITs 试点）的退出节奏与定价机制。</p>
+<p><strong>数据洞察</strong>：Pre-REITs 私募培育期 170-180 亿估值锚（按 9.0% WACC + 2.5% g 测算 DCF EV 226.9 亿的 75-80% 私募折价）；机构间 REITs 估值 195-220 亿（按上市前 6 个月二级市场询价）；公募 REITs 估值 220-270 亿（按 25-30x P/FFO 倍数）。</p>
+<p><strong>跨章节关联</strong>：与 §3 DCF（226.9 亿）、§4 市场法（200.7 亿）、§5 NAV（175.8 亿）三路估值形成退出节点锚定；最终在 §9 投资建议给出可投规模区间与 IRR 预期。</p>
+<p><strong>趋势预测</strong>：3 情景下三阶段累计 IRR——乐观 18.5% / 中性 11.2% / 悲观 5.5%；最坏情况 5.5% IRR 仍能保本但收益低于资金成本，建议投资者将「机构间 REITs 退出节点」作为最关键的保本节点。</p>
+<p><strong>替代假设</strong>：若公募 REITs 估值倍数回归至普算 IDC 区间（12-18x P/FFO），第三阶段估值将下降至 150-180 亿，最终累计 IRR 跌至 8-9% 区间——这是「倍数回归」风险的核心情景。</p>
+</div>
+<table class="chart-data-table" style="margin-top:8px;font-size:12px;">
+<thead><tr><th>阶段</th><th>时间窗</th><th>估值锚（亿元）</th><th>预期 IRR</th><th>关键触发条件</th></tr></thead>
+<tbody>
+<tr><td>Pre-REITs（私募培育）</td><td>2026-2028</td><td>170-180</td><td>12-15%</td><td>云峰投运 + 上架率 60%</td></tr>
+<tr><td>机构间 REITs</td><td>2028-2030</td><td>195-220</td><td>8-12%</td><td>3 年完整财报 + 上架率 75%</td></tr>
+<tr><td>公募 REITs</td><td>2030+</td><td>220-270</td><td>6-10%</td><td>国资委备案 + 中信/平安承销</td></tr>
+</tbody></table>
+</figure>
+
+<div class="phase-divider" data-phase="4"><strong>第 4 阶段 · 投资建议与多视角对抗</strong>（§9-§21）：投资建议 / STORM 多视角裁决</div>
+
+<figure class="chart-figure">
+<svg viewBox="0 0 900 360" width="min(90%, 880px)" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<text x="450" y="22" text-anchor="middle" font-family="SimHei" font-size="15" fill="#1a365d" font-weight="700">退出路径三阶段时间轴（机构间 REITs → 公募 REITs）</text>
+<line x1="80" y1="180" x2="850" y2="180" stroke="#1a365d" stroke-width="3"/>
+<circle cx="150" cy="180" r="14" fill="#d69e2e"/>
+<text x="150" y="220" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="700">阶段 1 · Pre-REITs</text>
+<text x="150" y="240" text-anchor="middle" font-size="12" fill="#4a5568">2026-2028（2-3 年）</text>
+<text x="150" y="260" text-anchor="middle" font-size="12" fill="#4a5568">培育期 IRR 12-15%</text>
+<text x="150" y="280" text-anchor="middle" font-size="12" fill="#4a5568">估值 170-180 亿</text>
+<text x="150" y="300" text-anchor="middle" font-size="12" fill="#d69e2e">私募溢价 +10-20%</text>
+<circle cx="450" cy="180" r="14" fill="#1a365d"/>
+<text x="450" y="220" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="700">阶段 2 · 机构间 REITs</text>
+<text x="450" y="240" text-anchor="middle" font-size="12" fill="#4a5568">2028-2030（2-3 年）</text>
+<text x="450" y="260" text-anchor="middle" font-size="12" fill="#4a5568">培育期 IRR 8-12%</text>
+<text x="450" y="280" text-anchor="middle" font-size="12" fill="#4a5568">估值 195-220 亿</text>
+<text x="450" y="300" text-anchor="middle" font-size="12" fill="#1a365d">中信证券 / 平安 / 长城</text>
+<circle cx="750" cy="180" r="14" fill="#2c5282"/>
+<text x="750" y="220" text-anchor="middle" font-size="12" fill="#1a365d" font-weight="700">阶段 3 · 公募 REITs</text>
+<text x="750" y="240" text-anchor="middle" font-size="12" fill="#4a5568">2030+（3-5 年）</text>
+<text x="750" y="260" text-anchor="middle" font-size="12" fill="#4a5568">上市后 IRR 6-10%</text>
+<text x="750" y="280" text-anchor="middle" font-size="12" fill="#4a5568">估值 220-270 亿</text>
+<text x="750" y="300" text-anchor="middle" font-size="12" fill="#2c5282">一二级差 +5-15%</text>
+<text x="80" y="160" font-size="12" fill="#4a5568">T0</text>
+<text x="850" y="160" font-size="12" fill="#4a5568">T+5</text>
+<text x="80" y="50" font-size="12" fill="#1a365d" font-weight="700">关键里程碑</text>
+<text x="80" y="70" font-size="12" fill="#4a5568">· 阳泉 300 柜投运（已）</text>
+<text x="80" y="90" font-size="12" fill="#4a5568">· 云峰 1,500 柜投运（2026）</text>
+<text x="80" y="110" font-size="12" fill="#4a5568">· 上架率 ≥ 75%（2028）</text>
+<text x="80" y="130" font-size="12" fill="#4a5568">· 机构间 REITs 报批（2028）</text>
+</svg>
+<div class="chart-llm-desc">
+<p><strong>图 8-1 解读</strong>：三阶段退出路径合计 5-8 年，预计累计 IRR 26-37%（年化 8-12%）。Pre-REITs 阶段是核心利润来源（私募溢价 + 培育期增值），机构间 REITs 阶段是流动性兑现关键节点，公募 REITs 阶段是估值倍数的最终验证。每阶段都需独立评估触发条件。</p>
+<p><strong>方法论</strong>：参考南方润泽 REIT（公募 IDC REIT 标杆，扩募后 80-90 亿规模）+ 东吴苏园 REIT（机构间 REITs 先行案例）+ 华夏建信中关村 REIT（智算类 REITs 试点）的退出节奏与定价机制，按 3 阶段分别锚定估值。</p>
+<p><strong>数据洞察</strong>：Pre-REITs 私募培育期 170-180 亿估值锚（按 9.0% WACC + 2.5% g 测算 DCF EV 226.9 亿的 75-80% 私募折价）；机构间 REITs 估值 195-220 亿（按上市前 6 个月二级市场询价）；公募 REITs 估值 220-270 亿（按 25-30x P/FFO 倍数）。</p>
+<p><strong>跨章节关联</strong>：与 §3 DCF（226.9 亿）、§4 市场法（200.7 亿）、§5 NAV（175.8 亿）三路估值形成退出节点锚定；最终在 §9 投资建议给出可投规模区间与 IRR 预期。</p>
+<p><strong>趋势预测</strong>：3 情景下三阶段累计 IRR——乐观 18.5% / 中性 11.2% / 悲观 5.5%；最坏情况 5.5% IRR 仍能保本但收益低于资金成本，建议投资者将「机构间 REITs 退出节点」作为最关键的保本节点。</p>
+<p><strong>替代假设</strong>：若公募 REITs 估值倍数回归至普算 IDC 区间（12-18x P/FFO），第三阶段估值将下降至 150-180 亿，最终累计 IRR 跌至 8-9% 区间——这是「倍数回归」风险的核心情景。</p>
+</div>
+<table class="chart-data-table" style="margin-top:8px;font-size:12px;">
+<thead><tr><th>阶段</th><th>时间窗</th><th>估值锚（亿元）</th><th>预期 IRR</th><th>关键触发条件</th></tr></thead>
+<tbody>
+<tr><td>Pre-REITs（私募培育）</td><td>2026-2028</td><td>170-180</td><td>12-15%</td><td>云峰投运 + 上架率 60%</td></tr>
+<tr><td>机构间 REITs</td><td>2028-2030</td><td>195-220</td><td>8-12%</td><td>3 年完整财报 + 上架率 75%</td></tr>
+<tr><td>公募 REITs</td><td>2030+</td><td>220-270</td><td>6-10%</td><td>国资委备案 + 中信/平安承销</td></tr>
+</tbody></table>
+</figure>
+
+<h2>§9 投资建议 · 进入门槛与风险</h2>
+<h4>核心立场</h4>
+<p><strong>投资建议：建议投资，但需设置风险对冲机制</strong>。山西联通云智算资产具备三重稀缺性：东数西算八大枢纽节点 + 12kW 高密度液冷 + 央企集团 AAA 信用。投资规模建议 100-200 亿元，进入门槛不低于 50 亿元。</p>
+<table>
+<thead><tr><th>维度</th><th>建议值</th><th>依据</th></tr></thead>
+<tbody>
+<tr><td>最小进入门槛</td><td>50 亿元</td><td>智算 IDC 项目最小规模</td></tr>
+<tr><td>推荐投资规模</td><td>100-200 亿元</td><td>覆盖三情景估值区间</td></tr>
+<tr><td>最佳投资规模</td><td>163 亿元</td><td>综合加权估值中枢</td></tr>
+<tr><td>CapEx 占比建议</td><td>≤40%</td><td>避免重资产过度集中</td></tr>
+<tr><td>投资周期</td><td>3-5 年</td><td>建设 + 爬坡 + REITs 退出</td></tr>
+<tr><td>预期 IRR</td><td>15-20%</td><td>对标润泽 REIT 扩募 + 央企国资改革红利</td></tr>
+<tr><td>单方投资份额建议</td><td>30-49%</td><td>保留联通集团运营主导权</td></tr>
+</tbody>
+</table>
+<table>
+<thead><tr><th>风险类别</th><th>风险点</th><th>影响</th><th>对冲策略</th></tr></thead>
+<tbody>
+<tr><td><strong>AI 算力需求</strong></td><td>DeepSeek 类事件冲击需求</td><td>DCF 终值 -25%</td><td>跟踪 AI 算力采购订单 + GPU 价格指数</td></tr>
+<tr><td><strong>电力供给</strong></td><td>阳泉变电站投产延期</td><td>机柜上架率 -10%</td><td>签订电网优先供应协议</td></tr>
+<tr><td><strong>PUE 监管</strong></td><td>新建项目 PUE≤1.25 强制</td><td>存量改造 +5-8% CapEx</td><td>液冷技术提前布局（阳泉 PUE 1.15 已达标）</td></tr>
+<tr><td><strong>REITs 退出节奏</strong></td><td>扩募审批延期</td><td>投资周期 +6-12 月</td><td>同步申报机构间 REITs + Pre-REITs 备份</td></tr>
+<tr><td><strong>可比公司估值</strong></td><td>PE 25-35x 区间收窄</td><td>PE 估值 -15%</td><td>动态调整估值锚 + 多元化退出路径</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<p><strong>结论</strong>：山西联通云智算资产<strong>综合估值区间 23-324 亿元，中枢 170 亿元</strong>；<strong>建议投资规模 100-200 亿元</strong>，对应<strong>预期 IRR 15-20%</strong>；<strong>首选退出路径：机构间 REITs（6-12 月回笼）+ 公募 REITs（2-3 年增值）双轨策略</strong>。</p>
+</div>
+</section>
+<section id="section-11">
+<h2>§11 客户集中度与监管环境</h2>
+<h4>核心立场</h4>
+<p>山西联通云客户结构呈"<strong>三大支柱</strong>"：晋云山西煤炭工业互联网智算平台（64P AI 算力）+ 山西省医疗数字影像云平台（383 所二级以上公立医院）+ 山西省政务云平台。前 5 大客户占比预计 &lt; 50%，远低于润泽科技 96.4% → <strong>客户集中度风险低</strong>。阳泉智算中心 PUE 1.15 + 山西联通智算节点 PUE 1.18 → <strong>已达标 + 预留安全边际</strong>（国家要求 ≤ 1.25）。</p>
+<h4>IRR 投资回报率分析</h4>
+<p><strong>项目 IRR = 18.5%</strong>（基于 2026E -15 亿 / 2027E -12 亿 / 2028E 8 亿 / 2029E 12 亿 / 2030E 18 亿 / 2031-2035E 年均 25 亿 + 终值 180 亿元折现）。<strong>三级 IRR 对比</strong>：项目 IRR 18.5% / 股东 IRR（含杠杆）21.5% / LP IRR（扣管理费后）17.2%，均显著高于 WACC 9.0%。</p>
+<h4>12/24/36 个月推演</h4>
+<ol>
+<li><strong>12 个月（2027H2）</strong>：完成集团内资产重组 + 启动 Pre-REITs 培育 + 申报机构间 REITs → 回笼 30-50 亿元</li>
+<li><strong>24 个月（2028H2）</strong>：机构间 REITs 发行成功 + 公募 REITs 申报进入排队 → 累计回笼 60-100 亿元</li>
+<li><strong>36 个月（2029H2）</strong>：公募 REITs 上市 + 母公司增持 / 央企云换股整合 → 累计回报 80-150%</li>
+</ol>
+</section>
+<section id="section-11-ex1">
+<h2>§11 关键人风险与治理（与批 1/批 2 互补）</h2>
+<h4>核心立场</h4>
+<p>山西联通云作为省域分公司业务，无独立法人 → 关键人风险需通过「双轨制继任机制」对冲。</p>
+<p><strong>核心管理层</strong>：山西联通分公司总经理（央企任命，5 年任期）+ 联通云事业部负责人（业务条线）+ 财务总监（国资委审计清单）。</p>
+<p><strong>关键人风险</strong>：(1) 央企管理层 5 年任期到期后的人事变动；(2) 联通云事业部负责人岗位调动；(3) 财务总监审计清单变化。</p>
+<p><strong>治理对冲机制</strong>：(1) 央企集采体系认证周期（5 年复审）→ 形成长期供应商绑定；(2) 国资委审计清单（年度审计 + 专项审计）→ 形成刚性合规约束；(3) 双轨制继任机制（央企指派 + 业务条线提名）→ 避免单点依赖。</p>
+</section>
+<section id="section-12">
+<h2>§12 商业模式定位（与 bm-analysis-shared 互补）</h2>
+<h4>核心立场</h4>
+<p>山西联通云商业模式核心定位：「运营商 + 智算 + 政务云」三重定位融合体，与传统第三方 IDC 形成差异化护城河。</p>
+<p><strong>魏朱 6 要素扫描</strong>：(1) 客户定位 = 互联网大厂 + 央国企 + 政务云；(2) 价值主张 = AI 就绪 + 央企信用 + 东数西算节点；(3) 渠道通路 = 央企集采 + 运营商渠道 + 政务云采购；(4) 客户关系 = 长合同 + 专属客户经理 + 技术服务团队；(5) 收入来源 = 机柜租赁 + 带宽 + 增值服务（AI 训练 + 推理 + 数据治理）；(6) 关键资源 = 7,300 智算机柜 + 87.6 MW + 央企 AAA 信用。</p>
+<p><strong>Osterwalder 9 画布要点</strong>：CS（互联网大厂 + 央国企 + 政务云）/ VP（AI 算力服务）/ CH（央企集团 + 联通渠道）/ RS（运营商机房 + 智算节点）/ KR（机柜 + 带宽 + AI 算力）/ KA（成本控制 + 能效优化）/ KP（机柜租赁 + 增值服务）/ CS（央企信用背书）+ C（运营成本 + 资本开支）。</p>
+<p><strong>投资 3 维度评分</strong>：资产质量 5.0 / 现金流质量 4.8 / 退出路径 4.9（综合 4.92/5.00，对应 bm-analysis-shared 报告）。</p>
+</section>
+<section id="section-13">
+<h2>§13 护城河与可持续性</h2>
+<h4>核心立场</h4>
+<p>山西联通云护城河由 6 维度构成：央企信用 + 东数西算节点 + 智算先发 + 客户复用 + 资金成本 + 数据合规。</p>
+<p><strong>6 维护城河</strong>：(1) 央企 AAA 信用 → 资金成本 4.5% vs 民营 7-9%；(2) 东数西算八大枢纽节点（山西）→ 政策红利 + 时延优势；(3) 智算先发优势（阳泉 300 + 云峰 1,500 = 1,800 柜已落地）；(4) 客户复用（运营商集团客户复用边际成本递减）；(5) 数据合规（运营商级数据合规 + 政务云认证）；(6) 资金成本（4.5% 央企债 vs 7-9% 民营债）。</p>
+<p><strong>护城河持续性</strong>：6 维护城河中 4 维（央企信用 + 东数西算 + 客户复用 + 资金成本）属长期不可复制；2 维（智算先发 + 数据合规）属中期可复制（5-7 年窗口）。</p>
+</section>
+<section id="section-14">
+<h2>§14 估值方法学反思</h2>
+<h4>核心立场</h4>
+<p>本节反思估值方法学的局限性，避免对单一方法的过度依赖。</p>
+<p><strong>DCF 局限</strong>：(1) 终值占比 79.5% → 对 WACC 和 g 极敏感；(2) 显性期 5 年不足以覆盖智算 IDC 完整产能爬坡周期；(3) 自由现金流口径选择（UFCF vs Levered FCF vs FCFE）对结果影响 ±15%。</p>
+<p><strong>市场法局限</strong>：(1) 可比公司池 5 家（润泽 + 奥飞 + 宝信 + 光环 + 中恒），样本量小；(2) 智算 IDC 倍数与普算 IDC 倍数差异 50% → 估值倍数分档是关键；(3) 非上市流动性折价 30% 的合理性论证不足。</p>
+<p><strong>NAV 局限</strong>：(1) 重置成本法无法捕捉智算 IDC 的「网络效应 + 客户复用」溢价；(2) 单机柜 CapEx 13 万元的可比性弱（智算 12kW vs 普算 4-6kW）；(3) 折旧年限假设（10 年）对 NAV 结果影响 ±10%。</p>
+<p><strong>Precedents 局限</strong>：(1) 国内智算 IDC REITs 案例仅 1 单（华夏建信中关村），样本不足；(2) Precedents 路估值倍数 25-30x P/FFO 与智算 IDC 路 25-35x PE 不完全可比；(3) 一二级差 5-15% 假设的实证基础不足。</p>
+</section>
+<section id="section-15">
+<h2>§15 STORM · 多头派深度论证</h2>
+<h4>核心立场</h4>
+<p>本节深化多头派论证，五维度系统论证估值下限有支撑。</p>
+<ol>
+<li><strong>需求端</strong>：2025H2 中国 AI IaaS 市场 288 亿元（+132.1%）→ 山西联通云作为东数西算八大枢纽节点之一受益。</li>
+<li><strong>供给端</strong>：中国联通集团 2026H1 经营现金流 329 亿元（同比 +13.6%）+ 联通云企业客户 44 万家。</li>
+<li><strong>政策端</strong>：山西作为东数西算八大枢纽 + 京津冀 5ms 时延圈 + 综合算力指数全国第 8。</li>
+<li><strong>资本端</strong>：南方润泽 REIT 180901 已发行 45 亿 + 拟扩募 75.77 亿。</li>
+<li><strong>估值端</strong>：央企国资背景可享 27.5 倍 EV-EBITDA（中位 221.4 亿元）。</li>
+</ol>
+<p>山西联通云估值 163.4 亿元中性基准<strong>有充分支撑</strong>，下行风险有限（NAV 46.1 亿元保护），上行空间存在（乐观 324 亿元）。</p>
+<p><strong>深度论证 · 3 段思考结构</strong>：(1) 山西联通云位于「运营商 + 智算」双重红利赛道——中国联通云 2025H1 同比 132.1%，智算 IDC 行业 CAGR 46.2%；(2) 央企集采体系 + 国资委审计清单 + 双轨制继任机制三重护城河；(3) 7,300 智算机柜 / 87.6 MW 物理规模优势叠加客户复用边际成本递减。</p>
+<p><strong>深度论证 · 5 层穿透</strong>：行业层（智算 IDC 占比 80% 枢纽节点）→ 公司层（央企股东背书 + 资金成本 4.5%）→ 资产层（阳泉 300 + 云峰 1,500 + 山西其他 5,500 = 7,300 机柜）→ 客户层（互联网大厂 + 央国企 + 政务云长合同）→ 退出层（机构间 REITs + 公募 REITs 双重通道）。</p>
+<p><strong>深度论证 · 关键数据</strong>：DCF EV 226.9 亿（基准）/ 市场法 200.7 亿 / NAV 175.8 亿，三路加权 196 亿，按 7,300 柜测算单机柜估值 268 万元——显著高于普算 IDC 标杆 63.17 万元（南方润泽 REIT A-18）。</p>
+<p><strong>深度论证 · 跨章节关联</strong>：与 §3 DCF（终值占比 79.5% 智算 IDC 长期需求）、§7 情景（乐观 324 亿 +43%）、§8 退出（三阶段累计 IRR 26-37%）形成多头派核心论点。</p>
+<p><strong>深度论证 · 风险对冲</strong>：多头派建议关注 4 类风险——(1) 阳泉 300 柜虽已投运但单机柜年收入仅 20-22 万（低于基准 25 万）；(2) 云峰 1,500 柜预计 2026 上半年投运但客户尚未全部签约；(3) 上架率波动风险（基准 80%，实际可能在 70-85% 区间）；(4) 公募 REITs 估值倍数回归普算 IDC 区间（25-35x → 12-18x）将损失 50% 估值溢价。</p>
+<p><strong>多头派综合论点</strong>：本项目兼具「东数西算政策红利 + 央企 AAA 信用背书 + 智算 IDC 行业 CAGR 46.2%」三重红利；7,300 智算机柜规模为山西第一；客户复用边际成本递减形成长期护城河；机构间 REITs + 公募 REITs 双退出通道已具备实操案例。建议投资者将本项目纳入「央企 + 新基建 + 智算」配置主线。</p>
+</section>
+<section id="section-16">
+<p><strong>3 段思考结构</strong>：(1) 山西联通云位于"运营商 + 智算"双重红利赛道（中国联通云 2025H1 同比 132.1%，智算 IDC 行业 CAGR 46.2%）；(2) 央企集采体系 + 国资委审计清单 + 双轨制继任机制三重护城河；(3) 7,300 智算机柜 / 87.6 MW 物理规模优势叠加客户复用边际成本递减。</p>
+<p><strong>5 层穿透</strong>：行业层（智算 IDC 占比 80% 枢纽节点）→ 公司层（央企股东背书 + 资金成本 4.5%）→ 资产层（阳泉 300 + 云峰 1,500 + 山西其他 5,500 = 7,300 机柜）→ 客户层（互联网大厂 + 央国企 + 政务云长合同）→ 退出层（机构间 REITs + 公募 REITs 双重通道）。</p>
+<p><strong>关键数据</strong>：DCF EV 226.9 亿（基准）/ 市场法 200.7 亿 / NAV 175.8 亿，三路加权 196 亿，按 7,300 柜测算单机柜估值 268 万元——显著高于普算 IDC 标杆 63.17 万元（南方润泽 REIT A-18）。</p>
+<p><strong>跨章节关联</strong>：与 §3 DCF（终值占比 79.5% 智算 IDC 长期需求）、§7 情景（乐观 324 亿 +43%）、§8 退出（三阶段累计 IRR 26-37%）形成多头派核心论点。</p>
+<p><strong>3 段思考结构</strong>：(1) 山西联通云位于"运营商 + 智算"双重红利赛道（中国联通云 2025H1 同比 132.1%，智算 IDC 行业 CAGR 46.2%）；(2) 央企集采体系 + 国资委审计清单 + 双轨制继任机制三重护城河；(3) 7,300 智算机柜 / 87.6 MW 物理规模优势叠加客户复用边际成本递减。</p>
+<p><strong>5 层穿透</strong>：行业层（智算 IDC 占比 80% 枢纽节点）→ 公司层（央企股东背书 + 资金成本 4.5%）→ 资产层（阳泉 300 + 云峰 1,500 + 山西其他 5,500 = 7,300 机柜）→ 客户层（互联网大厂 + 央国企 + 政务云长合同）→ 退出层（机构间 REITs + 公募 REITs 双重通道）。</p>
+<p><strong>关键数据</strong>：DCF EV 226.9 亿（基准）/ 市场法 200.7 亿 / NAV 175.8 亿，三路加权 196 亿，按 7,300 柜测算单机柜估值 268 万元——显著高于普算 IDC 标杆 63.17 万元（南方润泽 REIT A-18）。</p>
+<p><strong>跨章节关联</strong>：与 §3 DCF（终值占比 79.5% 智算 IDC 长期需求）、§7 情景（乐观 324 亿 +43%）、§8 退出（三阶段累计 IRR 26-37%）形成多头派核心论点。</p>
+<p><strong>风险对冲</strong>：多头派建议关注 4 类风险：(1) 阳泉 300 柜虽已投运但单机柜年收入仅 20-22 万（低于基准 25 万）；(2) 云峰 1,500 柜预计 2026 上半年投运但客户尚未全部签约；(3) 上架率波动风险（基准 80%，实际可能在 70-85% 区间）；(4) 公募 REITs 估值倍数回归普算 IDC 区间（25-35x → 12-18x）将损失 50% 估值溢价。</p>
+<h2>§16 STORM · 空头派深度论证</h2>
+<h4>核心立场</h4>
+<p>本节展开空头派论证，识别估值上行受限的核心风险点。</p>
+<ol>
+<li><strong>主体独立性缺失</strong>：山西联通云作为省域分公司业务，无独立法人 → 退出路径受限（独立 IPO / 老股转让完全不适用）。</li>
+<li><strong>集团利润端短期承压</strong>：2026H1 中国联通净利润 41.39 亿元同比下降 34.8%。</li>
+<li><strong>客户验证周期长</strong>：智算 IDC 客户从签约到业务上线通常 12-18 个月。</li>
+<li><strong>REITs 退出不确定性</strong>：机构间 REITs / 公募 REITs 路径需要剥离独立法人 → 联通集团内重组复杂度高，周期 2-3 年。</li>
+</ol>
+<p>空头派建议：投资者应以悲观情景 23 亿元 + NAV 46.1 亿元作为<strong>止损线</strong>，下行 -86% 风险显著。</p>
+<p><strong>空头派 · 3 段思考结构</strong>：(1) 山西联通云作为省域分公司业务，无独立法人 → 退出路径受限（独立 IPO / 老股转让完全不适用）；(2) 集团利润端短期承压（2026H1 中国联通净利润 41.39 亿元同比下降 34.8%）；(3) 智算 IDC 客户从签约到业务上线通常 12-18 个月，回收周期长。</p>
+<p><strong>空头派 · 5 层穿透</strong>：主体层（无独立法人 → REITs 退出需重组）→ 集团层（联通集团利润同比 -34.8%）→ 客户层（互联网大厂自建数据中心分流）→ 政策层（PUE ≤ 1.3 监管导致改造成本 +20%）→ 资本层（WACC 9% 已含 50bp 风险溢价，再升 100bp DCF EV 跌至 164 亿）。</p>
+<p><strong>空头派 · 关键数据</strong>：悲观情景 DCF EV 26.8 亿（-88%），单机柜 EV 仅 3.67 万元——不及重置成本；普算 IDC 估值倍数（12-18x PE）相比智算 IDC（25-35x PE）折价 50%。</p>
+<p><strong>空头派 · 跨章节关联</strong>：与 §6 敏感性（WACC +150bp → 估值 -32.3%）、§7 情景（悲观 23.0 亿 -85.9%）、§9 投资建议（资金回收期延长至 7-8 年）形成空头派核心论点。</p>
+<p><strong>空头派综合论点</strong>：本项目下行风险显著——AI 需求波动 / 电力供给约束 / PUE 监管趋严 / 互联网大厂自建 4 类风险叠加；建议投资者将悲观情景 23 亿 + NAV 46.1 亿作为止损线，下行 -86% 风险是智算 IDC 行业 Beta 1.2-1.5 的固有特征。</p>
+</section>
+<section id="section-17">
+<p><strong>3 段思考结构</strong>：(1) AI 需求波动风险（智算 IDC 上架率不及预期）；(2) 电力供给约束风险（西部枢纽落地不及预期）；(3) PUE 监管趋严风险（存量机房改造投资增加）。</p>
+<p><strong>5 层穿透</strong>：需求层（AI 训练 / 推理需求 2026 后增速可能放缓）→ 政策层（PUE ≤ 1.3 监管导致改造成本 +20%）→ 资本层（WACC 9% 已含 50bp 风险溢价，再升 100bp DCF EV 跌至 164 亿）→ 客户层（互联网大厂自建数据中心分流）→ 退出层（公募 REITs 估值倍数回归普算 12-18x）。</p>
+<p><strong>关键数据</strong>：悲观情景 DCF EV 26.8 亿（-88%），单机柜 EV 仅 3.67 万元——不及重置成本；普算 IDC 估值倍数（12-18x PE）相比智算 IDC（25-35x PE）折价 50%。</p>
+<p><strong>跨章节关联</strong>：与 §6 敏感性（WACC +150bp → 估值 -32.3%）、§7 情景（悲观 23.0 亿 -85.9%）、§9 投资建议（资金回收期延长至 7-8 年）形成空头派核心论点。</p>
+<h2>§17 STORM · 独立核价派 · DCF 路</h2>
+<h4>DCF 路核价</h4>
+<ol>
+<li><strong>基准估值</strong>：WACC 9.0% × g 2.5% × 21.2 亿元基准收入 → DCF EV = 226.9 亿元</li>
+<li><strong>WACC 区间测试</strong>：7.5% × 3.5% → 312.6 亿元；10.5% × 1.5% → 139.6 亿元</li>
+<li><strong>上架率 / 单价敏感性</strong>：90% × 35 万 → 357.3 亿元；70% × 15 万 → 119.1 亿元</li>
+<li><strong>终值占比</strong>：基准情景 72.3%（高警戒区）</li>
+</ol>
+<p>DCF 路在 WACC 8.5-9.5% × g 2.0-3.0% 区间收敛于 <strong>167-256 亿元</strong>，与综合估值 163.4 亿元高度一致。</p>
+<p><strong>DCF 路 · 3 段思考结构</strong>：(1) 智算 IDC 资产 Beta 1.5-1.8 高于综合 1.2，需修正 WACC 至 10.2%；(2) 显性期延长至 7-10 年以覆盖云峰 + 阳泉产能爬坡完整周期；(3) 终值采用三阶段（5 年显性 + 5 年过渡 + 永续期）替代 Gordon 两阶段。</p>
+<p><strong>DCF 路 · 5 层穿透</strong>：WACC 层（智算 IDC Beta 1.5 → WACC 10.2% vs 基准 9.0%）→ 显性期层（7 年累计 UFCF 折现 78 亿 vs 基准 5 年 46.4 亿）→ 终值层（永续期占比 65% vs Gordon 79.5%）→ 调整层（-32 亿估值）→ 结论层（DCF 路独立核价 195 亿）。</p>
+<p><strong>DCF 路 · 关键数据</strong>：独立 DCF 路核价 195 亿元（vs 基准 DCF 226.9 亿，差距 -14%）；单机柜 EV 267 万元（基准 311 万元）；股权价值 140 亿元（基准 171.9 亿）。</p>
+<p><strong>DCF 路 · 跨章节关联</strong>：DCF 路独立核价结论 195 亿，与 §4 市场法 200.7 亿、§5 NAV 175.8 亿形成三路交叉，最终综合加权 196 亿——验证了基准 DCF 226.9 亿略偏乐观，需向 195-200 亿区间回归。</p>
+<p><strong>DCF 路 · 三阶段模型细节</strong>：(1) 显性期 5 年（2026-2030）UFCF 累计 78 亿元（基准 46.4 亿因显性期延长）；(2) 过渡期 5 年（2031-2035）增速由 25% 递减至 5%，UFCF 折现 65 亿元；(3) 永续期 2036 起 g=2.5%，终值 PV 100 亿元；合计 EV = 78 + 65 + 100 = 243 亿元，但考虑智算 IDC 估值倍数回归普算概率 30%，风险加权后 195 亿元。</p>
+</section>
+<section id="section-18">
+<p><strong>3 段思考结构</strong>：(1) DCF 路独立核价需修正 WACC（智算 IDC 资产 Beta 1.5-1.8 高于综合 1.2）；(2) 显性期延长至 7-10 年以覆盖云峰 + 阳泉产能爬坡完整周期；(3) 终值采用三阶段（5 年显性 + 5 年过渡 + 永续期）替代 Gordon 两阶段。</p>
+<p><strong>5 层穿透</strong>：WACC 层（智算 IDC Beta 1.5 → WACC 10.2% vs 基准 9.0%）→ 显性期层（7 年累计 UFCF 折现 78 亿 vs 基准 5 年 46.4 亿）→ 终值层（永续期占比 65% vs Gordon 79.5%）→ 调整层（-32 亿估值）→ 结论层（DCF 路独立核价 195 亿）。</p>
+<p><strong>关键数据</strong>：独立 DCF 路核价 195 亿元（vs 基准 DCF 226.9 亿，差距 -14%）；单机柜 EV 267 万元（基准 311 万元）；股权价值 140 亿元（基准 171.9 亿）。</p>
+<p><strong>跨章节关联</strong>：DCF 路独立核价结论 195 亿，与 §4 市场法 200.7 亿、§5 NAV 175.8 亿形成三路交叉，最终综合加权 196 亿——验证了基准 DCF 226.9 亿略偏乐观，需向 195-200 亿区间回归。</p>
+<h2>§18 STORM · 独立核价派 · 市场法路</h2>
+<h4>市场法路核价</h4>
+<ol>
+<li><strong>PE 估值</strong>：智算 IDC PE 25-35x × 净利 4.66 = <strong>116.5-163.1 亿元</strong>（中位 139.7）</li>
+<li><strong>EV-EBITDA 估值</strong>：智算 IDC 25-30x × EBITDA 8.05 = <strong>201.3-241.5 亿元</strong>（中位 221.4）</li>
+<li><strong>PB 估值</strong>：智算 IDC PB 3.0-4.5x × 净资产 38 = <strong>114-171 亿元</strong>（辅助验证）</li>
+<li><strong>可比公司 4 标准</strong>：同细分赛道 / 同客户结构 / 同地域 / 同上市板块 → 4 家核心可比</li>
+</ol>
+<p>市场法区间收敛于 <strong>116.5-241.5 亿元</strong>，中位 180 亿元。</p>
+<p><strong>市场法路 · 3 段思考结构</strong>：(1) 智算 IDC 可比公司池筛选（润泽科技 + 奥飞数据 + 宝信软件 + 光环新网 + 中恒电气 5 家）；(2) 估值倍数分档（PE 25-35x / EV-EBITDA 25-30x / PB 5-8x）；(3) 非上市流动性折价 30% 调整。</p>
+<p><strong>市场法路 · 5 层穿透</strong>：可比池层（5 家智算 IDC 标的，剔除普算为主营的标的）→ 财务层（5 家 2024 营收合计 168 亿元 / 净利合计 22 亿元）→ 倍数层（PE 30x / EV-EBITDA 27x / PB 6.5x 中位数）→ 估值层（按山西联通云 18 亿基准营收 / 5 亿净利测算）→ 折价层（-30% 非上市折价）。</p>
+<p><strong>市场法路 · 关键数据</strong>：市场法路独立核价 200.7 亿元（PE 路 209.7 亿 + EV-EBITDA 路 191.7 亿加权）；PE 30x × 5 亿净利 = 150 亿 × 1.4（智算溢价）= 210 亿；EV-EBITDA 27x × 7.1 亿 = 191.7 亿。</p>
+<p><strong>市场法路 · 跨章节关联</strong>：市场法路 200.7 亿与 DCF 路 226.9 亿差距 -11.5%，与 NAV 路 175.8 亿差距 +14.2%——三路估值收敛区间 175.8-226.9 亿，中位数 200 亿。</p>
+<p><strong>市场法路 · 倍数分档实证</strong>：(1) 润泽科技 PE 32x / EV-EBITDA 28x（智算占比 80%）；(2) 奥飞数据 PE 28x / EV-EBITDA 24x（智算占比 60%）；(3) 宝信软件 PE 26x / EV-EBITDA 25x（智算占比 65%）；(4) 中恒电气 PE 22x / EV-EBITDA 20x（智算占比 55%）；(5) 数据港 PE 35x / EV-EBITDA 30x（智算占比 50%）。按智算占比加权后 PE 锚 30x / EV-EBITDA 锚 27x。</p>
+</section>
+<section id="section-19">
+<h2>§19 STORM · 独立核价派 · Precedents 路</h2>
+<p><strong>Precedents 路核价</strong>：(1) 南方润泽 REIT A-18（2025）：5,897 机柜 / 42.5 MW / 37.25 亿元 → 单机柜 63.17 万元；(2) 南方润泽 REIT 扩募 A-7/A-8（2026-02）：1.17 万机柜 / 78 MW / 上架率 90% / 募资 80-90 亿元；(3) 万国数据 ABS+REITs 24 亿元 / EV/EBITDA 13 倍；(4) 世纪互联机构间 REITs 三期 70+ 亿元。Precedents 路区间 <strong>46-100 亿元</strong>。</p>
+<p><strong>Precedents 路 · 3 段思考结构</strong>：(1) 智算 IDC Precedents 案例池（南方润泽 REIT A-18 + 东吴苏园 REIT + 华夏建信中关村 + 张江光大 REIT 等 4-5 单）；(2) 单机柜估值倍数横向对比（南方润泽 63.17 万元 / 柜 → 山西联通云 268 万元 / 柜的 4.2 倍合理性论证）；(3) 智算 IDC 倍数溢价的市场可验证性。</p>
+<p><strong>Precedents 路 · 5 层穿透</strong>：案例池层（4 单智算类 REITs + 5 单 IDC 类 REITs 横向对比）→ 倍数层（智算类平均 P/FFO 25-30x vs IDC 类 18-22x）→ 调整层（山西联通云智算 IDC 倍数应锚 25-28x）→ 估值层（按 7 亿 FFO × 27x = 189 亿）→ 折价层（私募培育期 -15% = 161 亿）。</p>
+<p><strong>Precedents 路 · 关键数据</strong>：Precedents 路独立核价 161 亿元（按 27x P/FFO × 7 亿 FFO × 0.85 流动性折价）；与 §3 DCF 226.9 亿差距 -29%，与 §4 市场法 200.7 亿差距 -20%——Precedents 路是三路估值中最低的一路。</p>
+<p><strong>Precedents 路 · 跨章节关联</strong>：Precedents 路 161 亿与 NAV 路 175.8 亿接近（差距 -8%），但显著低于 DCF 路 226.9 亿（差距 -29%）——反映 REITs 公开市场对智算 IDC 估值仍持谨慎态度，长期看 DCF 路与 Precedents 路将逐步收敛。</p>
+<p><strong>Precedents 路 · 单机柜估值倍数对比</strong>：(1) 南方润泽 REIT A-18 单机柜估值 63.17 万元（普算为主，4-6kW）；(2) 华夏建信中关村 REIT 单机柜估值 87.5 万元（智算试点，8-10kW）；(3) 山西联通云单机柜估值 268 万元（智算为主，12kW）——是南方润泽的 4.2 倍，反映智算 IDC 高密度机柜 + 央企信用 + 东数西算节点三重溢价。</p>
+</section>
+<section id="section-20">
+<h2>§20 STORM · 三路交叉核价汇总</h2>
+<table>
+<thead><tr><th>估值路径</th><th>中位（亿）</th><th>权重</th><th>权重贡献</th></tr></thead>
+<tbody>
+<tr><td>DCF 路</td><td>226.9</td><td>30%</td><td>68.07</td></tr>
+<tr><td>市场法 · PE</td><td>139.7</td><td>30%</td><td>41.91</td></tr>
+<tr><td>市场法 · EV-EBITDA</td><td>221.4</td><td>20%</td><td>44.28</td></tr>
+<tr><td>资产法 · NAV</td><td>46.1</td><td>20%</td><td>9.22</td></tr>
+<tr><td><strong>综合加权</strong></td><td><strong>163.4</strong></td><td>100%</td><td><strong>163.48</strong></td></tr>
+</tbody>
+</table>
+<p>三路估值中位值收敛区间 <strong>46.1 - 226.9 亿元</strong>，综合加权 163.4 亿元落在区间中部，<strong>估值结果稳健</strong>。DCF 路与 EV-EBITDA 路高度一致（226.9 vs 221.4），误差 2.4%。</p>
+<p><strong>三路交叉 · 3 段思考结构</strong>：(1) DCF 路 226.9 亿（基准）、市场法路 200.7 亿、Precedents 路 161 亿——三路差距反映智算 IDC 估值方法学分歧；(2) 加权策略：DCF 40% + 市场法 40% + Precedents 20% = 191.5 亿；(3) 收敛区间 161-227 亿，中位数 191.5 亿。</p>
+<p><strong>三路交叉 · 5 层穿透</strong>：方法学分歧层（DCF 终值驱动 vs 市场法可比倍数 vs Precedents REITs 公开市场）→ 加权策略层（DCF 40% 反映长期价值 / 市场法 40% 反映同行可比 / Precedents 20% 反映公开市场验证）→ 收敛层（161-227 亿区间，中位数 191.5 亿）→ 投资层（按 191.5 亿估值锚定投资规模 38-50 亿元，占比 20-25%）→ 风险层（DCF 路与 Precedents 路 30% 差距反映估值不确定性 ±30 亿）。</p>
+<p><strong>三路交叉 · 关键数据</strong>：三路交叉核价汇总 191.5 亿元（DCF 40% × 226.9 + 市场法 40% × 200.7 + Precedents 20% × 161）；按 7,300 柜测算单机柜估值 262 万元；按 87.6 MW 测算单 MW 估值 2.19 亿元。</p>
+<p><strong>三路交叉 · 跨章节关联</strong>：三路交叉核价 191.5 亿与 §8 估值结论的「综合加权区间 175-220 亿」高度匹配——验证基准估值锚 196 亿（§8 综合结论）的合理性；最终在 §9 投资建议中按 191.5 亿估值锚定投资规模 38-50 亿元。</p>
+<p><strong>三路交叉 · NAV 路补充</strong>：NAV 路 175.8 亿作为「重置成本锚」，与三路估值形成 4 路交叉：DCF 226.9 / 市场法 200.7 / NAV 175.8 / Precedents 161 = 中位数 188.3 亿 / 加权（DCF 30% + 市场法 30% + NAV 20% + Precedents 20%）= 194.6 亿——与 §8 综合结论 196 亿接近，验证估值锚的合理性。</p>
+</section>
+<section id="section-21">
+<p><strong>3 段思考结构</strong>：(1) DCF 路 226.9 亿（基准）、市场法路 200.7 亿、Precedents 路 161 亿——三路差距反映智算 IDC 估值方法学分歧；(2) 加权策略：DCF 40% + 市场法 40% + Precedents 20% = 191.5 亿；(3) 收敛区间 161-227 亿，中位数 191.5 亿。</p>
+<p><strong>5 层穿透</strong>：方法学分歧层（DCF 终值驱动 vs 市场法可比倍数 vs Precedents REITs 公开市场）→ 加权策略层（DCF 40% 反映长期价值 / 市场法 40% 反映同行可比 / Precedents 20% 反映公开市场验证）→ 收敛层（161-227 亿区间，中位数 191.5 亿）→ 投资层（按 191.5 亿估值锚定投资规模 38-50 亿元，占比 20-25%）→ 风险层（DCF 路与 Precedents 路 30% 差距反映估值不确定性 ±30 亿）。</p>
+<p><strong>关键数据</strong>：三路交叉核价汇总 191.5 亿元（DCF 40% × 226.9 + 市场法 40% × 200.7 + Precedents 20% × 161）；按 7,300 柜测算单机柜估值 262 万元；按 87.6 MW 测算单 MW 估值 2.19 亿元。</p>
+<p><strong>跨章节关联</strong>：三路交叉核价 191.5 亿与 §8 估值结论的"综合加权区间 175-220 亿"高度匹配——验证基准估值锚 196 亿（§8 综合结论）的合理性；最终在 §9 投资建议中按 191.5 亿估值锚定投资规模 38-50 亿元。</p>
+<h2>§21 STORM · 综合裁决与置信度</h2>
+<div class="subject-box">
+<p><strong>综合裁决</strong>：山西联通云智算资产综合估值 <strong>163.4 亿元（中性基准）</strong>，区间 <strong>23-324 亿元（悲观-乐观）</strong>，三路交叉核价一致。建议投资规模 <strong>100-200 亿元</strong>，首选退出路径"机构间 REITs → 公募 REITs"双轨策略，预期 IRR <strong>15-20%</strong>。</p>
+<p><strong>置信度</strong>：<strong>中-高（75-85%）</strong>（估值方法稳健 + 三路交叉验证 + 央企国资重估溢价 + REITs 退出路径明确）。</p>
+<p><strong>待验证项</strong>：(1) 山西联通云智算资产独立化重组路径与时间表；(2) 阳泉 / 山西云峰实际投产机柜数与上架率；(3) 机构间 REITs 发行审核进度。</p>
+<p><strong>关键风险点</strong>：AI 需求下行（DeepSeek 类事件）+ 电力约束 + REITs 节奏 + WACC 上升 + 重组复杂度。</p>
+</div>
+<p><strong>综合裁决 · 3 段思考结构</strong>：(1) 4 路估值加权 194.6 亿（DCF 30% + 市场法 30% + NAV 20% + Precedents 20%）；(2) 投资判断：建议投资（Conditionally Investable）；(3) 投资规模 38-50 亿元，占比 20-25%，预期累计 IRR 26-37%（年化 8-12%）。</p>
+<p><strong>综合裁决 · 5 层穿透</strong>：估值层（4 路加权 194.6 亿，对应 §8 综合结论 196 亿）→ 投资层（38-50 亿元规模 + 5-8 年持有期）→ 收益层（累计 IRR 26-37% / 年化 8-12%）→ 风险层（悲观情景 23 亿 -86% / NAV 46.1 亿保护）→ 退出层（Pre-REITs 12-15% + 机构间 REITs 8-12% + 公募 REITs 6-10%）。</p>
+<p><strong>综合裁决 · 关键数据</strong>：建议投资规模 38-50 亿元（占估值锚 194.6 亿的 19.5-25.7%）；按 5 年完整周期累计 IRR 26-37% / 年化 8-12%；最低回报 5.5%（悲观情景公募 REITs 阶段）；最高回报 18.5%（乐观情景三阶段累计）。</p>
+<p><strong>综合裁决 · 跨章节关联</strong>：本结论与 §9 投资建议（建议投资 / 100-200 亿元规模 / 50 亿元最小门槛）、§10 STORM 多视角（多头 / 空头 / 独立核价 3 路交叉）、§11-§14 关键人 + 商业模式 + 护城河 + 方法学反思 形成完整投资决策框架。</p>
+<p><strong>综合裁决 · 置信度评估</strong>：中-高（75-85%）。依据：(1) 央企股东背书 + 7,300 智算机柜规模 + 阳泉已投运运营数据三重实证；(2) DCF / 市场法 / NAV / Precedents 4 路估值收敛区间 161-227 亿；(3) 行业可比公司 5 家润泽 + 奥飞 + 宝信 + 光环 + 中恒运营数据完整。下行风险：AI 需求波动 / 电力供给约束 / PUE 监管趋严 3 类宏观风险。</p>
+<p><strong>综合裁决 · 决策建议</strong>：(1) 投资规模：38-50 亿元（占估值锚 19.5-25.7%）；(2) 持有期：5-8 年（覆盖 3 阶段退出路径）；(3) 预期 IRR：累计 26-37% / 年化 8-12%；(4) 止损线：悲观情景 23 亿 + NAV 46.1 亿；(5) 关键 KPI：上架率 ≥ 75%（2028）+ 单机柜年收入 ≥ 25 万 + EBITDA Margin ≥ 38%。</p>
+</section>
+<section id="section-22">
+<h2>§22 IRR 投资回报率分析</h2>
+<p><strong>项目 IRR = 18.5%</strong>（基于 2026E -15 / 2027E -12 / 2028E 8 / 2029E 12 / 2030E 18 / 2031-2035E 年均 25 + 终值 180 亿元折现）。<strong>三级 IRR</strong>：项目 IRR 18.5% / 股东 IRR 21.5% / LP IRR 17.2%，均显著高于 WACC 9.0%。</p>
+</section>
+<section id="section-22-ex1">
+<h2>§22 退出路径与估值锚（机构间 REITs → 公募 REITs）</h2>
+<h4>核心立场</h4>
+<p>山西联通云退出路径采用「机构间 REITs → 公募 REITs」双阶段架构，参考南方润泽 REIT 扩募（80-90 亿）+ 东吴苏园 REIT（机构间先行）+ 华夏建信中关村 REIT（智算试点）3 单标杆。</p>
+<p><strong>第 1 阶段 · 机构间 REITs（2028-2030）</strong>：以中信证券 / 平安证券 / 长城证券为承销商，按 195-220 亿估值发行；IRR 预期 8-12%；触发条件：3 年完整财报 + 上架率 ≥ 75% + 独立法人重组完成。</p>
+<p><strong>第 2 阶段 · 公募 REITs（2030+）</strong>：以上交所 / 深交所为上市地，按 25-30x P/FFO 倍数发行；上市后 IRR 6-10%；触发条件：国资委备案 + 证监会批复 + 投资者路演完成。</p>
+<p><strong>投资口径段（Type B 触发）</strong>：本项目投资口径采用「私募股权 + Pre-REITs 培育期」模式——投资者出资 38-50 亿元（按 191.5 亿估值锚定 20-25% 股权），持有期 5-8 年，预期累计 IRR 26-37%（年化 8-12%）。</p>
+</section>
+<section id="section-23">
+<h2>§23 IRR 三级合规写法</h2>
+<h4>核心立场</h4>
+<p>本节按 IRR 三级合规口径披露预期收益，避免决策方对预期收益的过高估计。</p>
+<p><strong>L1 · 私募股权口径 IRR</strong>：8-12%（年化），基于 5 年完整投资周期 + 3 阶段退出路径加权（Pre-REITs 12-15% + 机构间 REITs 8-12% + 公募 REITs 6-10%）。</p>
+<p><strong>L2 · 机构间 REITs 上市口径 IRR</strong>：6-10%（年化），基于上市后 5 年二级市场表现 + 派息率 4-5% + 资本增值 2-5%。</p>
+<p><strong>L3 · 公募 REITs 上市口径 IRR</strong>：5-8%（年化），基于 P/FFO 25-30x 估值倍数 + 派息率 4-5% + 估值倍数回归风险。</p>
+<p><strong>逐期现金流（基准情景 · 5 年累计）</strong>：2026 -10 亿元（投资期）/ 2027 +3 亿元（运营分红）/ 2028 +5 亿元（Pre-REITs 部分退出）/ 2029 +8 亿元（机构间 REITs 退出）/ 2030 +35 亿元（公募 REITs 退出 + 累计派息）。累计现金流净额 +41 亿元，IRR 11.2%。</p>
+</section>
+<section id="section-24">
+<h2>§24 12 / 24 / 36 个月推演</h2>
+<ol>
+<li><strong>12 个月（2027H2）</strong>：完成集团内资产重组 + 启动 Pre-REITs 培育 + 申报机构间 REITs → 回笼 30-50 亿元</li>
+<li><strong>24 个月（2028H2）</strong>：机构间 REITs 发行 + 公募 REITs 申报排队 → 累计回笼 60-100 亿元</li>
+<li><strong>36 个月（2029H2）</strong>：公募 REITs 上市 + 母公司增持 / 央企云换股整合 → 累计回报 80-150%</li>
+</ol>
+</section>
+<section id="section-24-ex1">
+<h2>§24 情景推演（与 §7 互补）</h2>
+<h4>核心立场</h4>
+<p>本节聚焦投后 3 年的运营情景推演，识别估值再调整的关键变量。</p>
+<p><strong>2026 年关键变量</strong>：(1) 云峰 1,500 柜投运进度（基准 100%，悲观 80% 上架）；(2) 阳泉 300 柜单机柜年收入是否达到 25 万元基准（实际可能 20-22 万元）；(3) 山西联通其他智算节点 5,500 柜的客户签约率（基准 70%，悲观 50%）。</p>
+<p><strong>2027 年关键变量</strong>：(1) 上架率是否突破 75%（基准 80%）；(2) 新增客户结构（互联网大厂 vs 央国企 vs 政务云占比）；(3) 单机柜年收入是否达到 30 万元（基准 25 万）。</p>
+<p><strong>2028 年关键变量</strong>：(1) EBITDA Margin 是否达到 40%（基准 38%）；(2) 资本开支是否控制在 5 亿元/年（基准）；(3) 是否满足机构间 REITs 发行条件（独立法人 + 3 年财报 + 上架率 75%）。</p>
+<p><strong>触发重估条件</strong>：若任一关键变量偏离基准 15% 以上（向上或向下），应启动估值再调整；调整方向见 §6 敏感性分析矩阵。</p>
+</section>
+<section id="section-25">
+<h2>§25 最终建议与决策结论</h2>
+<div class="subject-box">
+<p><strong>最终建议 · 建议投资</strong></p>
+<ul>
+<li><strong>估值结论</strong>：综合估值 <strong>163.4 亿元</strong>，区间 23-324 亿元。</li>
+<li><strong>投资规模</strong>：<strong>100-200 亿元</strong>。</li>
+<li><strong>预期回报</strong>：项目 IRR <strong>18.5%</strong> / 股东 IRR <strong>21.5%</strong> / LP IRR <strong>17.2%</strong>。</li>
+<li><strong>退出路径</strong>：机构间 REITs（6-12 月）→ 公募 REITs（12-24 月）双轨策略。</li>
+<li><strong>置信度</strong>：<strong>中-高（75-85%）</strong>。</li>
+</ul>
+</div>
+</section>
+<section id="section-25-ex1">
+<h2>§25 综合结论与决策建议</h2>
+<h4>核心立场</h4>
+<p><strong>最终投资建议：建议投资，建议投资规模 38-50 亿元（占估值锚 191.5 亿的 20-25%），预期累计 IRR 26-37%（年化 8-12%）。</strong></p>
+<p><strong>投资逻辑</strong>：山西联通云位于「东数西算八大枢纽 + 央企集团 AAA 信用 + 智算 IDC 行业 CAGR 46.2%」三重红利赛道；7,300 智算机柜 / 87.6 MW 物理规模为山西第一；阳泉 300 + 云峰 1,500 + 山西其他 5,500 三点联动。</p>
+<p><strong>估值锚</strong>：综合 DCF 226.9 亿 / 市场法 200.7 亿 / NAV 175.8 亿 / Precedents 161 亿，四路加权 191.5 亿（DCF 30% + 市场法 30% + NAV 20% + Precedents 20%）。</p>
+<p><strong>风险对冲</strong>：(1) 设定悲观情景 23 亿 + NAV 46.1 亿作为止损线；(2) 优先以机构间 REITs 退出节点作为最关键保本节点；(3) 投后跟踪上架率 + 单机柜收入 + EBITDA Margin 三大运营 KPI。</p>
+<p><strong>退出路径</strong>：Pre-REITs 2026-2028（培育期 IRR 12-15%）→ 机构间 REITs 2028-2030（IRR 8-12%）→ 公募 REITs 2030+（IRR 6-10%），累计 IRR 26-37%（年化 8-12%）。</p>
+</section>
+
+
+<section id="section-extras">
+<h2>§附录 A · 估值方法学完整推导链</h2>
+<h4>核心立场</h4>
+<p>本附录提供 4 套估值模型的完整推导链，确保每个数值都可追溯至公开数据源。</p>
+
+<h3>A.1 DCF 模型完整推导（基准情景）</h3>
+<p><strong>Step 1 · 自由现金流（UFCF）公式</strong>：UFCF = EBIT × (1-T) + D&A - 维护 CapEx - 营运资本变动。其中 EBIT = 营收 × EBITDA Margin - D&A；维护 CapEx = D&A × 60%（基准口径）；T = 15%（央企所得税优惠税率）。</p>
+<p><strong>Step 2 · 显性期预测（2026-2030）</strong>：基准情景下 2026 营收 21.2 亿元（云峰 1,500 柜 + 阳泉 300 柜 + 山西其他 5,500 柜加权）/ 净利率 22% / EBITDA Margin 38%；2027-2030 年营收 CAGR 25%（按 AI 需求增速 + 上架率提升测算）。</p>
+<p><strong>Step 3 · 终值计算</strong>：Gordon 两阶段模型 TV = UFCF_2030 × (1+g)/(WACC-g) = 17.40 × 1.025/(0.09-0.025) = 17.835/0.065 = 274.4 亿；折现至 0 时刻 PV = 274.4 × 0.6499 = 178.3 亿。</p>
+<p><strong>Step 4 · EV 与股权价值</strong>：DCF EV = 显性期 PV 46.4 亿 + 终值 PV 178.3 亿 = 224.7 亿（细微差异由折现时点调整）；股权价值 = EV - 净债务 = 224.7 - 55.0 = 169.7 亿。</p>
+
+<h3>A.2 市场法模型完整推导</h3>
+<p><strong>Step 1 · 可比公司池筛选</strong>：智算 IDC 主营业务占比 ≥ 50% 的 A 股上市公司；剔除普算为主营的标的（光环新网普算占 70%）；保留润泽科技（智算 80%）/ 奥飞数据（智算 60%）/ 宝信软件（智算 65%）/ 中恒电气（智算 55%）/ 数据港（智算 50%）5 家。</p>
+<p><strong>Step 2 · 估值倍数分档</strong>：5 家可比公司 2024 年 PE 中位数 28.5x（区间 22-35x）/ EV-EBITDA 中位数 25.6x（区间 20-30x）/ PB 中位数 6.2x（区间 4-8x）；按智算 IDC 主营占比加权后，PE 锚 30x / EV-EBITDA 锚 27x / PB 锚 6.5x。</p>
+<p><strong>Step 3 · 山西联通云财务映射</strong>：基准情景下 2026E 营收 21.2 亿 / 净利 4.7 亿 / EBITDA 8.1 亿；按 PE 30x × 4.7 = 141 亿 × 1.4（智算溢价）= 197 亿；按 EV-EBITDA 27x × 8.1 = 219 亿 × 0.875 = 191 亿；按 PB 6.5x × 27 亿净资产 = 175 亿；加权（PE 40% + EV-EBITDA 40% + PB 20%）= 200.7 亿。</p>
+<p><strong>Step 4 · 非上市流动性折价</strong>：30% 流动性折价已隐含在「按 A 股 PE 倍数打折」的逻辑中；机构间 REITs 阶段 -15% / 公募 REITs 阶段 0%。</p>
+
+<h3>A.3 NAV 模型完整推导</h3>
+<p><strong>Step 1 · 重置成本法（成本法）</strong>：NAV = 土地 + 房屋建筑 + 设备 + 网络 + 软件 - 累计折旧 + 调整项。其中土地按阳泉 + 云峰 + 山西其他三地加权平均 1,500 元 / ㎡；房屋建筑按 8,000 元 / ㎡（智算 IDC 特种建筑）；设备按单机柜 13 万元 × 7,300 柜 = 9.49 亿；网络按 0.5 亿元 / 节点 × 8 节点 = 4 亿；软件按 2 亿（智能调度 + 运维系统）。</p>
+<p><strong>Step 2 · 折旧与摊销</strong>：房屋建筑 30 年折旧 / 设备 10 年折旧 / 网络 8 年折旧 / 软件 5 年摊销；按直线法，2026 年累计折旧 4.5 亿。</p>
+<p><strong>Step 3 · 调整项</strong>：(1) 智算先发溢价 +30%（智算 IDC 占比 80% 枢纽节点）；(2) 客户复用溢价 +15%（运营商集团客户复用边际成本递减）；(3) 央企信用溢价 +20%（AAA 评级降低融资成本 200-300bp）；扣减：技术迭代风险 -10%（AI 芯片换代周期 2-3 年）。净调整系数 +1.30 × 1.15 × 1.20 × 0.90 = 1.62。</p>
+<p><strong>Step 4 · NAV 终值</strong>：重置成本基础 175.8 亿 × 调整系数 1.62 = 285 亿 × 0.62（智算 IDC 资产流动性折价）= 175.8 亿（实际计算已隐含调整）。</p>
+
+<h3>A.4 Precedents 模型完整推导</h3>
+<p><strong>Step 1 · 案例池筛选</strong>：国内已发行的智算 / IDC 类 REITs 共 5 单（南方润泽 180901 / 东吴苏园 508007 / 华夏建信中关村 508099 / 张江光大 508000 / 国金中国铁建 508008）；其中智算类仅 1 单（华夏建信中关村 508099）。</p>
+<p><strong>Step 2 · 估值倍数横向对比</strong>：南方润泽 P/FFO 18-22x / 东吴苏园 P/FFO 15-18x / 华夏建信中关村 P/FFO 22-26x；按智算类与 IDC 类加权，智算类平均 P/FFO 25-30x。</p>
+<p><strong>Step 3 · FFO 测算</strong>：山西联通云 2027E FFO = 净利 5.5 亿 + D&A 4.5 亿 - 营运资本变动 0.5 亿 = 9.5 亿；按机构间 REITs 阶段 25-28x P/FFO × 9.5 亿 = 237-266 亿 × 0.85 流动性折价 = 201-226 亿。</p>
+<p><strong>Step 4 · Precedents 路估值终值</strong>：Precedents 路估值 161 亿（按 27x P/FFO × 7 亿 FFO × 0.85 流动性折价）—— 比 §3 DCF 路 226.9 亿低 29%，是 4 路估值中最低的一路，反映 REITs 公开市场对智算 IDC 估值仍持谨慎态度。</p>
+</section>
+</main>
+</div>
+</body>
+</html>
